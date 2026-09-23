@@ -1,0 +1,27 @@
+{
+  "balanced_augmentation_examples": 250,
+  "balanced_augmentation_source": "data/intent_balanced_augmentation.csv",
+  "candidate_model_dir": "models\\intent_distilbert_candidate",
+  "effective_train_batch_size": 128,
+  "epochs": 1,
+  "eval_batch_size": 32,
+  "gradient_accumulation_steps": 4,
+  "hard_boundary_repeat": 1,
+  "hard_boundary_source": "data/intent_hard_boundary_train.csv",
+  "labels": [
+    "Billing",
+    "Refund",
+    "Technical",
+    "Complaint",
+    "Product Inquiry"
+  ],
+  "learning_rate": 2e-05,
+  "max_length": 64,
+  "model": "distilbert-base-uncased",
+  "seed": 20260911,
+  "synthetic_examples_per_intent": 500,
+  "test_examples": 3000,
+  "train_batch_size": 32,
+  "train_examples": 2655,
+  "validation_examples": 3000
+}

@@ -1,0 +1,49 @@
+{
+  "model": "j-hartmann/emotion-english-distilroberta-base",
+  "native_labels": [
+    "anger",
+    "disgust",
+    "fear",
+    "joy",
+    "neutral",
+    "sadness",
+    "surprise"
+  ],
+  "required_direct_emotions": [
+    "joy",
+    "neutral",
+    "anger"
+  ],
+  "aggregation": {
+    "Happy": [
+      "joy"
+    ],
+    "Neutral": [
+      "neutral",
+      "surprise"
+    ],
+    "Angry": [
+      "anger",
+      "disgust",
+      "fear",
+      "sadness"
+    ]
+  },
+  "examples": {
+    "Happy": {
+      "text": "I am delighted with the helpful ZENDS support. Thank you so much!",
+      "sentiment": "Happy",
+      "sentiment_confidence": 0.974130392074585
+    },
+    "Neutral": {
+      "text": "Could you explain the billing rule for Postpaid Gold in USA?",
+      "sentiment": "Neutral",
+      "sentiment_confidence": 0.9672278165817261
+    },
+    "Angry": {
+      "text": "I have already tried to get an answer and this complaint remains unresolved. Please escalate it.",
+      "sentiment": "Angry",
+      "sentiment_confidence": 0.8966402085497975
+    }
+  }
+}

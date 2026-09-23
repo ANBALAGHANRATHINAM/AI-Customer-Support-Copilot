@@ -1,0 +1,48 @@
+{
+  "columns": [
+    "text",
+    "intent",
+    "sentiment"
+  ],
+  "facts_file": "1_Data_Foundation/config/zends_facts.json",
+  "facts_sha256": "cefd0ee64373a9fc820b0c47723c0de733381ab6f285f9ee22aad477c279a761",
+  "intent_counts": [
+    [
+      "Technical",
+      4000
+    ],
+    [
+      "Billing",
+      4000
+    ],
+    [
+      "Product Inquiry",
+      4000
+    ],
+    [
+      "Refund",
+      4000
+    ],
+    [
+      "Complaint",
+      4000
+    ]
+  ],
+  "rows": 20000,
+  "seed": 20260911,
+  "sentiment_counts": [
+    [
+      "Neutral",
+      6700
+    ],
+    [
+      "Angry",
+      6650
+    ],
+    [
+      "Happy",
+      6650
+    ]
+  ],
+  "source": "ZENDS Communications.pdf only for company facts"
+}

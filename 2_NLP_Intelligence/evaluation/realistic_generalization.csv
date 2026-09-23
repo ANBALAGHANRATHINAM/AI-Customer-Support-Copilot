@@ -1,0 +1,101 @@
+text,intent
+"What is this charge that appeared on my ZENDS bill?",Billing
+"Why did my account take a bigger payment this month?",Billing
+"I cannot match this card transaction to any service I use.",Billing
+"Can somebody explain why the invoice is higher now?",Billing
+"I have a charge on my statement that I do not understand.",Billing
+"Why has my regular bill risen?",Billing
+"There seems to be an extra fee in my payment history.",Billing
+"What am I paying for on this latest bill?",Billing
+"My balance looks wrong; can it be checked?",Billing
+"I noticed an unknown amount was taken from my account.",Billing
+"Why was I charged again for the same service?",Billing
+"Please tell me why the monthly total changed.",Billing
+"There is a charge I do not remember authorising.",Billing
+"Could you explain the charges listed on my invoice?",Billing
+"My payment has increased and I need to know why.",Billing
+"Why did I get charged more for my ZENDS account?",Billing
+"I need someone to review a charge I do not recognise.",Billing
+"The amount on my latest bill is not what I expected.",Billing
+"Can you tell me what this payment was for?",Billing
+"Why is there a new fee on my account?",Billing
+"I want to return this service and get my money back.",Refund
+"Can I be refunded if I cancel the package now?",Refund
+"I only joined recently and would like to undo the payment.",Refund
+"How do I ask for a refund after cancelling?",Refund
+"I do not need this plan anymore; can the payment be returned?",Refund
+"Would I qualify to have my subscription cost reimbursed?",Refund
+"Please help me reverse the charge because I changed my mind.",Refund
+"I want to cancel and get back what I spent.",Refund
+"Can I request a repayment for a service I no longer want?",Refund
+"I paid by accident and would like a refund.",Refund
+"Is there a way to recover my money from a recent signup?",Refund
+"I need the amount paid for my cancelled plan returned.",Refund
+"Can my purchase be reversed and refunded?",Refund
+"I would like reimbursement for the package I just bought.",Refund
+"What are the rules for getting my payment back?",Refund
+"I would like a refund because I no longer need the service.",Refund
+"Can I receive my payment back after I cancel?",Refund
+"I want the money from this recent order returned.",Refund
+"Please advise whether my cancelled service can be refunded.",Refund
+"I changed plans by mistake and want a reimbursement.",Refund
+"My internet stopped working without any warning.",Technical
+"The home connection disconnects throughout the day.",Technical
+"I cannot make my ZENDFiber service connect.",Technical
+"My broadband is down and I need help getting online.",Technical
+"The network goes off every few minutes.",Technical
+"How can I fix a WiFi connection that keeps failing?",Technical
+"Nothing can connect through my router today.",Technical
+"I need assistance because the fiber setup will not work.",Technical
+"The signal keeps cutting out during meetings.",Technical
+"My devices say there is no internet access.",Technical
+"The connection is unreliable since this morning.",Technical
+"Can technical support help with my offline home network?",Technical
+"The modem has power but I cannot browse anything.",Technical
+"My line will not activate after installation.",Technical
+"Internet access has suddenly disappeared.",Technical
+"My WiFi is connected but there is no working internet.",Technical
+"The fiber network keeps going down at home.",Technical
+"I cannot get a connection after installing my router.",Technical
+"Please help me resolve a broadband outage.",Technical
+"My internet drops whenever I try to use it.",Technical
+"I am annoyed that no one has sorted out my complaint.",Complaint
+"This has been handled badly and I want it escalated.",Complaint
+"I have asked for help several times without a resolution.",Complaint
+"The support experience has been extremely disappointing.",Complaint
+"I want to complain about the way this was dealt with.",Complaint
+"I am fed up with waiting for someone to resolve this.",Complaint
+"My issue has been open for days and nobody follows up.",Complaint
+"I am unhappy with the service and the lack of response.",Complaint
+"Please escalate this ongoing unresolved matter.",Complaint
+"I am frustrated by how my earlier requests were treated.",Complaint
+"This service has let me down repeatedly and I need to complain.",Complaint
+"I do not feel my concern has been taken seriously.",Complaint
+"The repeated lack of help is unacceptable.",Complaint
+"I want a formal complaint logged about this experience.",Complaint
+"I am disappointed that my previous complaint achieved nothing.",Complaint
+"I am unhappy that this matter still has not been resolved.",Complaint
+"Support has failed to deal with my repeated requests.",Complaint
+"I need to complain about the poor handling of my case.",Complaint
+"This has gone on too long and I want an escalation.",Complaint
+"I am frustrated because no one has followed up.",Complaint
+"Which mobile plan would be best for international calls?",Product Inquiry
+"What home internet packages can I choose from?",Product Inquiry
+"Can you describe the connectivity services for companies?",Product Inquiry
+"I am interested in comparing your available phone plans.",Product Inquiry
+"What features are included in your broadband offers?",Product Inquiry
+"Do you sell packages for people working from home?",Product Inquiry
+"What can ZENDS provide for a growing business?",Product Inquiry
+"I want information about your mobile and roaming choices.",Product Inquiry
+"Which cloud products do you have?",Product Inquiry
+"What kinds of internet services does ZENDS sell?",Product Inquiry
+"Can I look at the plans before deciding which one to buy?",Product Inquiry
+"What options are available for an office connection?",Product Inquiry
+"Tell me about the different home WiFi choices.",Product Inquiry
+"I am looking for a package that includes calling abroad.",Product Inquiry
+"What services are offered for an enterprise customer?",Product Inquiry
+"Which ZENDS package supports international calling?",Product Inquiry
+"What plans are available for a new home connection?",Product Inquiry
+"Can you outline your business internet products?",Product Inquiry
+"I want to know what mobile subscriptions you offer.",Product Inquiry
+"What are the available options for cloud hosting?",Product Inquiry

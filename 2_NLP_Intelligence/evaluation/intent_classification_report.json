@@ -1,0 +1,45 @@
+{
+  "Billing": {
+    "f1-score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "support": 600.0
+  },
+  "Complaint": {
+    "f1-score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "support": 600.0
+  },
+  "Product Inquiry": {
+    "f1-score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "support": 600.0
+  },
+  "Refund": {
+    "f1-score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "support": 600.0
+  },
+  "Technical": {
+    "f1-score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "support": 600.0
+  },
+  "accuracy": 1.0,
+  "macro avg": {
+    "f1-score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "support": 3000.0
+  },
+  "weighted avg": {
+    "f1-score": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "support": 3000.0
+  }
+}

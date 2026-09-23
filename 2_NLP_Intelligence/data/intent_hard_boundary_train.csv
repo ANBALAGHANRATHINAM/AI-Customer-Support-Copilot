@@ -1,0 +1,156 @@
+text,intent
+"I do not recognize the fee on my statement.",Billing
+"Can you break down the charges on this month's account?",Billing
+"My bill is much larger than I expected.",Billing
+"What exactly did ZENDS take this payment for?",Billing
+"There is an unfamiliar debit on my invoice.",Billing
+"Why has the amount due gone up?",Billing
+"I was billed twice for the same plan.",Billing
+"Please explain the extra amount on my account.",Billing
+"My usual payment changed without warning.",Billing
+"How can I see the details behind this charge?",Billing
+"I think my subscription price was calculated incorrectly.",Billing
+"Which service does this line item refer to?",Billing
+"The payment on my card does not look right.",Billing
+"Why am I paying more than last month?",Billing
+"I need help understanding my latest invoice.",Billing
+"Could you check an unexpected charge for me?",Billing
+"My account shows a charge I did not approve.",Billing
+"Where did this balance come from?",Billing
+"I was charged after changing my plan; can you explain it?",Billing
+"What is included in the amount I owe?",Billing
+"There is a billing error on my ZENDS account.",Billing
+"I need to know why the direct debit increased.",Billing
+"Can someone review the cost on my bill?",Billing
+"Why did my payment total change this cycle?",Billing
+"I want an explanation for this service charge.",Billing
+"I would like my payment returned.",Refund
+"Can I cancel my new service and recover what I paid?",Refund
+"I no longer want the plan and would like a refund.",Refund
+"Is it possible to get my money back after signing up?",Refund
+"I paid for this recently but want to reverse the purchase.",Refund
+"Please process a refund for my subscription.",Refund
+"I want to withdraw from the service and be reimbursed.",Refund
+"Could I receive a repayment for the plan I cancelled?",Refund
+"I changed my mind shortly after joining; can I be refunded?",Refund
+"What is the process for getting my payment back?",Refund
+"I need a refund rather than an explanation of the bill.",Refund
+"Can I get back the amount I paid when I enrolled?",Refund
+"I want to end this order and ask for reimbursement.",Refund
+"Would cancelling now make me eligible for a refund?",Refund
+"Please return the money from my recent purchase.",Refund
+"I signed up by mistake and need my payment reversed.",Refund
+"Can I reclaim the cost of this service?",Refund
+"I am within the trial period and want my money back.",Refund
+"Help me submit a request to be refunded.",Refund
+"I do not want this package anymore; please reimburse me.",Refund
+"Could I cancel and receive a credit back to my card?",Refund
+"I bought the wrong plan and would like a refund.",Refund
+"I want my subscription payment returned, please.",Refund
+"Am I entitled to reimbursement after cancelling?",Refund
+"I need to undo this purchase and get the funds back.",Refund
+"My broadband has stopped connecting.",Technical
+"The WiFi drops out repeatedly at home.",Technical
+"I cannot get online through my ZENDFiber router.",Technical
+"My network has been unstable since yesterday.",Technical
+"Can you help diagnose why the internet is offline?",Technical
+"The connection cuts out every few minutes.",Technical
+"I need assistance setting up my fiber connection.",Technical
+"My home network will not connect after installation.",Technical
+"Pages will not load even though the router is on.",Technical
+"The internet speed suddenly became unusable.",Technical
+"How do I troubleshoot a failing broadband connection?",Technical
+"My ZENDS service has no signal at the moment.",Technical
+"I keep losing my connection while working from home.",Technical
+"The modem is online but none of my devices have internet.",Technical
+"Please help me fix an intermittent connection.",Technical
+"My fiber line is not working this afternoon.",Technical
+"I cannot connect to the network after restarting everything.",Technical
+"The service keeps disconnecting during video calls.",Technical
+"Can you help with a router setup problem?",Technical
+"My connection is slow and keeps timing out.",Technical
+"I need technical help because the internet will not start.",Technical
+"The network disappeared from my devices.",Technical
+"There is an error when I try to activate my connection.",Technical
+"My home broadband went down this morning.",Technical
+"The wireless connection is unstable.",Technical
+"I am unhappy with the way my case was handled.",Complaint
+"This has been a frustrating experience for several days.",Complaint
+"I have contacted support repeatedly and nothing is resolved.",Complaint
+"I want to lodge a complaint about the service.",Complaint
+"Nobody has dealt with my issue properly.",Complaint
+"The response from support has been disappointing.",Complaint
+"I am tired of being passed around without a solution.",Complaint
+"This situation has been handled very poorly.",Complaint
+"I need to escalate my unresolved service complaint.",Complaint
+"I am dissatisfied with the support I received.",Complaint
+"My previous reports have been ignored.",Complaint
+"I have been waiting for a resolution and am very frustrated.",Complaint
+"Please record a formal complaint for me.",Complaint
+"The lack of follow-up has been unacceptable.",Complaint
+"I am disappointed that this issue keeps being left unresolved.",Complaint
+"I need someone to take ownership of this ongoing problem.",Complaint
+"I have complained before but it keeps happening.",Complaint
+"The service experience has been poor and I want to escalate it.",Complaint
+"I am unhappy with how long this has taken to fix.",Complaint
+"This is not the level of help I expected from ZENDS.",Complaint
+"I am frustrated with the lack of a proper response.",Complaint
+"Please raise this as a complaint with the team.",Complaint
+"I have had enough of the unresolved support issue.",Complaint
+"The repeated failures to help me are disappointing.",Complaint
+"I want to complain about how my request was treated.",Complaint
+"Which mobile options include overseas calling?",Product Inquiry
+"What broadband packages are available for a household?",Product Inquiry
+"Can you show me the plans ZENDS sells to small businesses?",Product Inquiry
+"I am comparing internet packages; what choices do I have?",Product Inquiry
+"What comes with the mobile connectivity service?",Product Inquiry
+"Do you offer a plan suitable for a family?",Product Inquiry
+"Which ZENDS products are available in my country?",Product Inquiry
+"I want to learn about your cloud services.",Product Inquiry
+"What options do you have for an office network?",Product Inquiry
+"Can you explain the features of the available plans?",Product Inquiry
+"I am shopping for a new home internet plan.",Product Inquiry
+"What services can a business get from ZENDS?",Product Inquiry
+"Do you have mobile packages with roaming?",Product Inquiry
+"Which broadband tier would suit a small office?",Product Inquiry
+"What is included with your fiber packages?",Product Inquiry
+"Please tell me about your enterprise connectivity offers.",Product Inquiry
+"Are there any internet plans for remote workers?",Product Inquiry
+"What products are offered for cloud infrastructure?",Product Inquiry
+"I would like to compare your data plans.",Product Inquiry
+"What choices are there for home WiFi?",Product Inquiry
+"Can I see the available telecom services?",Product Inquiry
+"What does ZENDS provide for connected devices?",Product Inquiry
+"Which plan includes the features I need for international calls?",Product Inquiry
+"I am interested in the services you offer before I sign up.",Product Inquiry
+"What are my options for a new mobile subscription?",Product Inquiry
+"Why did my bill amount increase this month?",Billing
+"My monthly payment is higher than it was last month.",Billing
+"Why was I charged more on my latest ZENDS invoice?",Billing
+"The amount on my monthly bill has changed.",Billing
+"Can you explain why my payment increased this cycle?",Billing
+"My ZENDS bill shows a higher amount than usual.",Billing
+"I want the money I paid returned to me.",Refund
+"I want to cancel and get my payment back.",Refund
+"Can I get my money back for this service?",Refund
+"I no longer want the service and want a refund.",Refund
+"Which ZENDS mobile plan offers international calling?",Product Inquiry
+"Do you have mobile plans that include international calls?",Product Inquiry
+"I want to know which mobile plans support overseas calling.",Product Inquiry
+"What mobile options are available if I need international calling?",Product Inquiry
+"Can you recommend a mobile plan with international calling?",Product Inquiry
+"My mobile connection is failing when I try to make calls.",Technical
+"I cannot make calls on my mobile connection.",Technical
+"My internet connection is not working.",Technical
+"My ZENDFiber connection keeps failing.",Technical
+"There is a problem with my internet connection.",Technical
+"How does ZENDS billing work?",Billing
+"What is the ZENDS billing policy?",Billing
+"How are ZENDS customers billed?",Billing
+"What are the billing terms for ZENDS services?",Billing
+"Can you explain how billing works?",Billing
+"How does monthly billing work?",Billing
+"What is the billing process at ZENDS?",Billing
+"Can you explain ZENDS monthly billing?",Billing
+"What should I know about ZENDS billing?",Billing
+"How often will I be billed by ZENDS?",Billing

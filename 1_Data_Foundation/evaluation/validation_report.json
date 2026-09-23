@@ -1,0 +1,116 @@
+{
+  "actual_rows": 20000,
+  "balanced_intents": true,
+  "blank_text_rows": 0,
+  "columns_match": true,
+  "exact_duplicate_rows": 0,
+  "exact_duplicate_texts": 0,
+  "expected_rows": 20000,
+  "factual_consistency": {
+    "all_monetary_values_are_catalog_prices": true,
+    "catalog_product_count": 28,
+    "country_coverage": {
+      "India": 3401,
+      "Singapore": 3435,
+      "Thailand": 3290,
+      "USA": 3322
+    },
+    "incompatible_service_rows": 0,
+    "invalid_country_rows": 0,
+    "invalid_price_context_rows": 0,
+    "invalid_product_rows": 0,
+    "unsupported_monetary_values": []
+  },
+  "intent_counts": {
+    "Billing": 4000,
+    "Complaint": 4000,
+    "Product Inquiry": 4000,
+    "Refund": 4000,
+    "Technical": 4000
+  },
+  "limitations": [
+    "Rule-based checks catch known malformed patterns and source-fact mismatches but cannot prove every sentence is semantically natural.",
+    "The near-duplicate scan is a deterministic 2,500-row character n-gram sample, not an exhaustive semantic-duplicate audit of all 20,000 records."
+  ],
+  "missing_values": {
+    "intent": 0,
+    "sentiment": 0,
+    "text": 0
+  },
+  "near_duplicate_scan": {
+    "maximum_nearest_similarity": 0.9897,
+    "method": "exact nearest-neighbour cosine similarity over character 4-5 grams",
+    "pairs_at_or_above_0_995": 0,
+    "sample_size": 2500,
+    "threshold": 0.995
+  },
+  "normalized_duplicate_texts": 0,
+  "passed": true,
+  "required_columns": [
+    "text",
+    "intent",
+    "sentiment"
+  ],
+  "sentiment_balance": {
+    "approximately_balanced": true,
+    "max_minus_min": 50,
+    "tolerance": 200
+  },
+  "sentiment_counts": {
+    "Angry": 6650,
+    "Happy": 6650,
+    "Neutral": 6700
+  },
+  "text_quality": {
+    "intent_text_consistency": {
+      "Billing": {
+        "checked": 4000,
+        "marker_consistent": 4000,
+        "marker_mismatches": 0
+      },
+      "Complaint": {
+        "checked": 4000,
+        "marker_consistent": 4000,
+        "marker_mismatches": 0
+      },
+      "Product Inquiry": {
+        "checked": 4000,
+        "marker_consistent": 4000,
+        "marker_mismatches": 0
+      },
+      "Refund": {
+        "checked": 4000,
+        "marker_consistent": 4000,
+        "marker_mismatches": 0
+      },
+      "Technical": {
+        "checked": 4000,
+        "marker_consistent": 4000,
+        "marker_mismatches": 0
+      }
+    },
+    "malformed_pattern_matches": {
+      "\\b(\\w+)\\s+\\1\\b": 0,
+      "\\b(help|assistance) (?:with|for) \\1\\b": 0,
+      "\\b(setup guidance|troubleshooting|technical support) (?:for|with) \\1\\b": 0,
+      "\\btechnical guidance for setup guidance\\b": 0,
+      "\\s{2,}": 0
+    },
+    "neutral_rows_with_explicit_happy_or_angry_tone": 0,
+    "sentiment_cue_coverage": {
+      "Angry": {
+        "checked": 6650,
+        "cue_missing": 0,
+        "cue_present": 6650
+      },
+      "Happy": {
+        "checked": 6650,
+        "cue_missing": 0,
+        "cue_present": 6650
+      }
+    },
+    "technical_rows_with_complaint_markers": 0
+  },
+  "unknown_intents": [],
+  "unknown_sentiments": []
+}

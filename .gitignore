@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.env
+models/
+vector_db/
+2_NLP_Intelligence/models/intent_distilbert/
+2_NLP_Intelligence/models/checkpoints/
+3_RAG_Knowledge/vector_db/
+3_RAG_Knowledge/.runtime/
+3_RAG_Knowledge/runtime_local/

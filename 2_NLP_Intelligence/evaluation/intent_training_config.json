@@ -1,0 +1,21 @@
+{
+  "epochs": 1,
+  "eval_batch_size": 256,
+  "hard_boundary_repeat": 15,
+  "hard_boundary_source": "data/intent_hard_boundary_train.csv",
+  "labels": [
+    "Billing",
+    "Refund",
+    "Technical",
+    "Complaint",
+    "Product Inquiry"
+  ],
+  "learning_rate": 2e-05,
+  "max_length": 64,
+  "model": "distilbert-base-uncased",
+  "seed": 20260911,
+  "test_examples": 3000,
+  "train_batch_size": 128,
+  "train_examples": 15875,
+  "validation_examples": 3000
+}

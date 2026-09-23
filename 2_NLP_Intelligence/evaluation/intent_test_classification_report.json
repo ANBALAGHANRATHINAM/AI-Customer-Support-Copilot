@@ -1,0 +1,45 @@
+{
+  "Billing": {
+    "f1-score": 0.5330132052821128,
+    "precision": 0.9527896995708155,
+    "recall": 0.37,
+    "support": 600.0
+  },
+  "Complaint": {
+    "f1-score": 0.8214037526059764,
+    "precision": 0.7044100119189511,
+    "recall": 0.985,
+    "support": 600.0
+  },
+  "Product Inquiry": {
+    "f1-score": 0.7791706846673095,
+    "precision": 0.9244851258581236,
+    "recall": 0.6733333333333333,
+    "support": 600.0
+  },
+  "Refund": {
+    "f1-score": 0.8043331076506431,
+    "precision": 0.677309007981756,
+    "recall": 0.99,
+    "support": 600.0
+  },
+  "Technical": {
+    "f1-score": 0.785831960461285,
+    "precision": 0.7768729641693811,
+    "recall": 0.795,
+    "support": 600.0
+  },
+  "accuracy": 0.7626666666666667,
+  "macro avg": {
+    "f1-score": 0.7447505421334654,
+    "precision": 0.8071733618998055,
+    "recall": 0.7626666666666666,
+    "support": 3000.0
+  },
+  "weighted avg": {
+    "f1-score": 0.7447505421334654,
+    "precision": 0.8071733618998055,
+    "recall": 0.7626666666666667,
+    "support": 3000.0
+  }
+}

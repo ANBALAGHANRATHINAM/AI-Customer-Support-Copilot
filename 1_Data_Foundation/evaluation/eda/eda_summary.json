@@ -1,0 +1,123 @@
+{
+  "charts": [
+    "intent_distribution.png",
+    "sentiment_distribution.png",
+    "message_length_distribution.png",
+    "intent_vs_sentiment.png",
+    "message_length_by_intent.png",
+    "common_terms.png"
+  ],
+  "common_terms": [
+    {
+      "count": 8651,
+      "term": "need"
+    },
+    {
+      "count": 5984,
+      "term": "enterprise"
+    },
+    {
+      "count": 5766,
+      "term": "confirm"
+    },
+    {
+      "count": 5585,
+      "term": "customer"
+    },
+    {
+      "count": 5342,
+      "term": "refund"
+    },
+    {
+      "count": 4405,
+      "term": "listed"
+    },
+    {
+      "count": 3874,
+      "term": "individual"
+    },
+    {
+      "count": 3765,
+      "term": "support"
+    },
+    {
+      "count": 3628,
+      "term": "know"
+    },
+    {
+      "count": 3606,
+      "term": "promptly"
+    },
+    {
+      "count": 3554,
+      "term": "appreciate"
+    },
+    {
+      "count": 3499,
+      "term": "home"
+    },
+    {
+      "count": 3435,
+      "term": "singapore"
+    },
+    {
+      "count": 3426,
+      "term": "does"
+    },
+    {
+      "count": 3401,
+      "term": "india"
+    }
+  ],
+  "duplicate_analysis": {
+    "exact_duplicate_rows": 0,
+    "exact_duplicate_texts": 0
+  },
+  "intent_distribution": {
+    "Billing": 4000,
+    "Complaint": 4000,
+    "Product Inquiry": 4000,
+    "Refund": 4000,
+    "Technical": 4000
+  },
+  "intent_vs_sentiment": {
+    "Angry": {
+      "Billing": 1150,
+      "Complaint": 2200,
+      "Product Inquiry": 600,
+      "Refund": 1400,
+      "Technical": 1300
+    },
+    "Happy": {
+      "Billing": 1450,
+      "Complaint": 600,
+      "Product Inquiry": 2200,
+      "Refund": 1200,
+      "Technical": 1200
+    },
+    "Neutral": {
+      "Billing": 1400,
+      "Complaint": 1200,
+      "Product Inquiry": 1200,
+      "Refund": 1400,
+      "Technical": 1500
+    }
+  },
+  "message_length_words": {
+    "max": 43,
+    "mean": 27.95,
+    "median": 28.0,
+    "min": 13
+  },
+  "outliers": {
+    "count": 61,
+    "lower_bound": 16.0,
+    "method": "1.5 x IQR on word count",
+    "upper_bound": 40.0
+  },
+  "sentiment_distribution": {
+    "Angry": 6650,
+    "Happy": 6650,
+    "Neutral": 6700
+  }
+}

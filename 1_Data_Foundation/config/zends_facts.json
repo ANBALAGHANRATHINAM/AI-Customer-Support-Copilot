@@ -1,0 +1,52 @@
+{
+  "company": "ZENDS Communications",
+  "countries": ["USA", "India", "Singapore", "Thailand"],
+  "customer_types": ["individual", "enterprise"],
+  "products": [
+    {"name":"Prepaid Basic","group":"Mobile Connectivity","details":"5GB prepaid mobile plan","prices":{"USA":{"individual":60,"enterprise":48},"India":{"individual":36,"enterprise":28},"Singapore":{"individual":66,"enterprise":56},"Thailand":{"individual":48,"enterprise":38}}},
+    {"name":"Prepaid Plus","group":"Mobile Connectivity","details":"20GB prepaid mobile plan","prices":{"USA":{"individual":80,"enterprise":60},"India":{"individual":48,"enterprise":29},"Singapore":{"individual":88,"enterprise":76},"Thailand":{"individual":64,"enterprise":52}}},
+    {"name":"Prepaid Unlimited","group":"Mobile Connectivity","details":"unlimited prepaid mobile plan","prices":{"USA":{"individual":100,"enterprise":80},"India":{"individual":60,"enterprise":50},"Singapore":{"individual":110,"enterprise":90},"Thailand":{"individual":80,"enterprise":70}}},
+    {"name":"Postpaid Silver","group":"Mobile Connectivity","details":"50GB postpaid mobile plan","prices":{"USA":{"individual":70,"enterprise":60},"India":{"individual":42,"enterprise":36},"Singapore":{"individual":77,"enterprise":66},"Thailand":{"individual":56,"enterprise":48}}},
+    {"name":"Postpaid Gold","group":"Mobile Connectivity","details":"100GB postpaid mobile plan","prices":{"USA":{"individual":100,"enterprise":80},"India":{"individual":60,"enterprise":50},"Singapore":{"individual":110,"enterprise":90},"Thailand":{"individual":80,"enterprise":70}}},
+    {"name":"Postpaid Platinum","group":"Mobile Connectivity","details":"unlimited data with international calls","prices":{"USA":{"individual":120,"enterprise":110},"India":{"individual":72,"enterprise":66},"Singapore":{"individual":132,"enterprise":121},"Thailand":{"individual":96,"enterprise":88}}},
+    {"name":"ZENDFiber Home 100 Mbps","group":"Home & Office Internet","details":"100 Mbps home broadband","prices":{"USA":{"individual":30,"enterprise":25},"India":{"individual":18,"enterprise":15},"Singapore":{"individual":33,"enterprise":27},"Thailand":{"individual":24,"enterprise":20}}},
+    {"name":"ZENDFiber Home 300 Mbps","group":"Home & Office Internet","details":"300 Mbps home broadband","prices":{"USA":{"individual":50,"enterprise":45},"India":{"individual":30,"enterprise":27},"Singapore":{"individual":55,"enterprise":49},"Thailand":{"individual":40,"enterprise":36}}},
+    {"name":"ZENDFiber Home 1 Gbps","group":"Home & Office Internet","details":"1 Gbps home broadband","prices":{"USA":{"individual":80,"enterprise":70},"India":{"individual":48,"enterprise":42},"Singapore":{"individual":88,"enterprise":77},"Thailand":{"individual":64,"enterprise":56}}},
+    {"name":"ZENDOffice Net 200","group":"Home & Office Internet","details":"office broadband plan","prices":{"USA":{"individual":60,"enterprise":55},"India":{"individual":36,"enterprise":33},"Singapore":{"individual":66,"enterprise":61},"Thailand":{"individual":48,"enterprise":44}}},
+    {"name":"ZENDOffice Net 500","group":"Home & Office Internet","details":"office broadband plan","prices":{"USA":{"individual":90,"enterprise":80},"India":{"individual":54,"enterprise":48},"Singapore":{"individual":99,"enterprise":88},"Thailand":{"individual":72,"enterprise":64}}},
+    {"name":"ZENDOffice Net 1G","group":"Home & Office Internet","details":"office broadband plan","prices":{"USA":{"individual":150,"enterprise":130},"India":{"individual":90,"enterprise":78},"Singapore":{"individual":165,"enterprise":143},"Thailand":{"individual":120,"enterprise":104}}},
+    {"name":"ZENDBiz Connect 100","group":"Business Connectivity","details":"business connectivity plan","prices":{"USA":{"individual":70,"enterprise":60},"India":{"individual":42,"enterprise":36},"Singapore":{"individual":77,"enterprise":66},"Thailand":{"individual":56,"enterprise":48}}},
+    {"name":"ZENDBiz Connect 500","group":"Business Connectivity","details":"business connectivity plan","prices":{"USA":{"individual":120,"enterprise":100},"India":{"individual":72,"enterprise":60},"Singapore":{"individual":132,"enterprise":110},"Thailand":{"individual":96,"enterprise":80}}},
+    {"name":"ZENDBiz Connect 1G","group":"Business Connectivity","details":"business connectivity plan","prices":{"USA":{"individual":200,"enterprise":180},"India":{"individual":120,"enterprise":108},"Singapore":{"individual":220,"enterprise":198},"Thailand":{"individual":160,"enterprise":144}}},
+    {"name":"ZENDEnterprise Ultra","group":"Business Connectivity","details":"enterprise connectivity plan","prices":{"USA":{"individual":300,"enterprise":280},"India":{"individual":180,"enterprise":168},"Singapore":{"individual":330,"enterprise":308},"Thailand":{"individual":240,"enterprise":224}}},
+    {"name":"ZENDEnterprise Dedicated","group":"Business Connectivity","details":"dedicated enterprise connectivity plan","prices":{"USA":{"individual":500,"enterprise":450},"India":{"individual":300,"enterprise":270},"Singapore":{"individual":550,"enterprise":495},"Thailand":{"individual":400,"enterprise":360}}},
+    {"name":"ZENDCloud VM Basic","group":"Cloud & Data Center Services","details":"cloud virtual machine","prices":{"USA":{"individual":40,"enterprise":35},"India":{"individual":24,"enterprise":21},"Singapore":{"individual":44,"enterprise":38},"Thailand":{"individual":32,"enterprise":28}}},
+    {"name":"ZENDCloud VM Pro","group":"Cloud & Data Center Services","details":"cloud virtual machine","prices":{"USA":{"individual":80,"enterprise":70},"India":{"individual":48,"enterprise":42},"Singapore":{"individual":88,"enterprise":77},"Thailand":{"individual":64,"enterprise":56}}},
+    {"name":"ZENDCloud VM Enterprise","group":"Cloud & Data Center Services","details":"cloud virtual machine","prices":{"USA":{"individual":150,"enterprise":130},"India":{"individual":90,"enterprise":78},"Singapore":{"individual":165,"enterprise":143},"Thailand":{"individual":120,"enterprise":104}}},
+    {"name":"ZENDStorage 1TB","group":"Cloud & Data Center Services","details":"cloud file storage","prices":{"USA":{"individual":20,"enterprise":15},"India":{"individual":12,"enterprise":9},"Singapore":{"individual":22,"enterprise":16},"Thailand":{"individual":16,"enterprise":12}}},
+    {"name":"ZENDStorage 10TB","group":"Cloud & Data Center Services","details":"cloud file storage","prices":{"USA":{"individual":120,"enterprise":100},"India":{"individual":72,"enterprise":60},"Singapore":{"individual":132,"enterprise":110},"Thailand":{"individual":96,"enterprise":80}}},
+    {"name":"ZENDArchive Storage","group":"Cloud & Data Center Services","details":"archive cloud storage","prices":{"USA":{"individual":50,"enterprise":40},"India":{"individual":30,"enterprise":24},"Singapore":{"individual":55,"enterprise":44},"Thailand":{"individual":40,"enterprise":32}}},
+    {"name":"ZENDSmart Traffic","group":"IoT & Smart Solutions","details":"smart-city solution","prices":{"USA":{"individual":100,"enterprise":90},"India":{"individual":60,"enterprise":54},"Singapore":{"individual":110,"enterprise":99},"Thailand":{"individual":80,"enterprise":72}}},
+    {"name":"ZENDSmart Lighting","group":"IoT & Smart Solutions","details":"smart-city solution","prices":{"USA":{"individual":80,"enterprise":70},"India":{"individual":48,"enterprise":42},"Singapore":{"individual":88,"enterprise":77},"Thailand":{"individual":64,"enterprise":56}}},
+    {"name":"ZENDSmart Parking","group":"IoT & Smart Solutions","details":"smart-city solution","prices":{"USA":{"individual":60,"enterprise":50},"India":{"individual":36,"enterprise":30},"Singapore":{"individual":66,"enterprise":55},"Thailand":{"individual":48,"enterprise":40}}},
+    {"name":"ZENDIndustrial Sensor","group":"IoT & Smart Solutions","details":"industrial IoT solution","prices":{"USA":{"individual":120,"enterprise":100},"India":{"individual":72,"enterprise":60},"Singapore":{"individual":132,"enterprise":110},"Thailand":{"individual":96,"enterprise":80}}},
+    {"name":"ZENDFleet IoT","group":"IoT & Smart Solutions","details":"fleet IoT solution","prices":{"USA":{"individual":150,"enterprise":130},"India":{"individual":90,"enterprise":78},"Singapore":{"individual":165,"enterprise":143},"Thailand":{"individual":120,"enterprise":104}}}
+  ],
+  "services": {
+    "Mobile Connectivity": ["voice calling", "SMS", "5G mobile data", "international roaming", "voicemail", "SIM and eSIM provisioning", "customer support", "mobile app management", "plan upgrades", "add-on data packages", "roaming packages", "mobile insurance", "family plan support"],
+    "Home & Office Internet": ["fiber connectivity", "router and WiFi equipment", "installation", "24/7 technical support", "network monitoring", "setup guidance", "troubleshooting", "bundled mobile plans", "SLA-backed support for enterprise customers"],
+    "Business Connectivity": ["dedicated bandwidth", "MPLS connectivity", "SLA-backed uptime", "priority troubleshooting", "customized network solutions", "security add-ons", "monitoring add-ons"],
+    "Cloud & Data Center Services": ["virtual machines", "file storage", "backup and disaster recovery", "cloud networking", "cloud migration support", "API integrations", "monitoring", "dedicated enterprise support"],
+    "IoT & Smart Solutions": ["sensor connectivity", "real-time data processing", "device management", "analytics", "smart city integrations", "remote monitoring", "reporting dashboards", "predictive maintenance"]
+  },
+  "policies": {
+    "billing": "Monthly billing is in advance. Enterprise customers receive consolidated invoices. Late payment after 7 days may suspend services.",
+    "refund": "A full refund is available within 7 days when usage is less than 10%. Cloud services are non-refundable after activation.",
+    "contracts": "Individual users have no long-term lock-in. Enterprise customers have a minimum 12-month contract.",
+    "sla": "Individual users have 98.5% uptime, business users 99.5% uptime, and enterprise users 99.9% uptime.",
+    "privacy": "ZENDS is GDPR compliant, ISO 27001 certified, and encrypts data at rest and in transit.",
+    "fair_usage": "Unlimited plans are capped at 1TB per month.",
+    "support": "Support tiers are Standard, Priority, and Enterprise Dedicated Support.",
+    "discounts": "Bulk enterprise users can receive up to 30% discount. Annual payment discount is 15%."
+  }
+}

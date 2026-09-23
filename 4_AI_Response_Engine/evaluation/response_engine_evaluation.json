@@ -1,0 +1,185 @@
+{
+  "llm_mode": "offline-safe",
+  "cases": [
+    {
+      "topic": "Billing",
+      "query": "When are ZENDS bills issued and when can service be suspended?",
+      "intent": "Billing",
+      "sentiment": "Neutral",
+      "priority": "High",
+      "retrieved_chunk_ids": [
+        "zends-p01-c01",
+        "zends-p03-c06",
+        "zends-p01-c02",
+        "zends-p03-c03"
+      ],
+      "recommended_response": "I understand your concern. I recognize this needs urgent attention. Based on the available ZENDS information: Billing: Monthly billing in advance. Enterprise customers receive consolidated invoices. Late payment after 7 days may suspend services.",
+      "abstained": false
+    },
+    {
+      "topic": "Refund",
+      "query": "Can I receive a refund within seven days if I used less than 10%?",
+      "intent": "Refund",
+      "sentiment": "Neutral",
+      "priority": "Low",
+      "retrieved_chunk_ids": [
+        "zends-p03-c07",
+        "zends-p03-c06",
+        "zends-p04-c06",
+        "zends-p04-c04"
+      ],
+      "recommended_response": "I understand your concern. Based on the available ZENDS information: Refund: Full refund within 7 days if usage is less than 10%. Cloud services are non-refundable after activation. 3",
+      "abstained": false
+    },
+    {
+      "topic": "Technical",
+      "query": "My ZENDFiber connection is down and I need troubleshooting help.",
+      "intent": "Complaint",
+      "sentiment": "Angry",
+      "priority": "High",
+      "retrieved_chunk_ids": [
+        "zends-p01-c01",
+        "zends-p02-c03",
+        "zends-p02-c01",
+        "zends-p02-c04"
+      ],
+      "recommended_response": "I am sorry that this has been frustrating. I understand your concern. I recognize this needs urgent attention. Based on the available ZENDS information: includes plan upgrade options, add-on data packages, roaming packages, and value-added services like mobile insurance and family plan support. 2. Home & Office Internet ZENDS provides high-speed fiber and wireless broadband for homes and offices. Home broadband products include ZENDFiber Home 100 Mbps priced at $30 in the USA, $18 in India, $33 in Singapore, and $24 in Thailand for individual users, and $25 in the USA, $15 in India, $27 in Singapore, and $20 in Thailand for enterprise customers. ZENDFiber Home 300 Mbps is priced at $50 in the USA, $30 in India, $55 in Singapore, and $40 in Thailand for individual users, and $45 in the USA, $27 in India, $49 in Singapore, and $36 in Thailand for enterprise customers. ZENDFiber Home 1 Gbps is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $70 in the USA, $42 in India, $77 in Services include fiber connectivity, router and WiFi equipment, installation, 24\u00d77 technical support, network monitoring, setup guidance, troubleshooting, optional bundled plans with mobile connectivity, and SLA- backed support for enterprise customers. 3. Business Connectivity ZENDBiz Connect 100 is priced at $70 in the USA, $42 in India, $77 in Singapore, and $56 in Thailand for individual users, and $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for enterprise customers. ZENDBiz Connect 500 is priced at $120 in the USA, $72 in India, $132 in Singapore, and $96 in Thailand for individual users, and $100 in the USA, $60 in India, $110 in Singapore, and $80 in Thailand for enterprise customers. ZENDBiz Connect 1G is priced at $200 in the USA, $120 in India, $220 in Singapore,",
+      "abstained": false
+    },
+    {
+      "topic": "Complaint",
+      "query": "I am angry because my internet is down and blocking my work; please escalate this.",
+      "intent": "Complaint",
+      "sentiment": "Angry",
+      "priority": "High",
+      "retrieved_chunk_ids": [
+        "zends-p04-c05",
+        "zends-p03-c06",
+        "zends-p02-c05",
+        "zends-p02-c01"
+      ],
+      "recommended_response": "I am sorry that this has been frustrating. I understand your concern. I recognize this needs urgent attention. Based on the available ZENDS information: Services include dedicated bandwidth, MPLS connectivity, SLA-backed uptime, priority troubleshooting, customized network solutions for enterprises, and optional security and monitoring add-ons. 2",
+      "abstained": false
+    },
+    {
+      "topic": "Product Inquiry",
+      "query": "What services are included with mobile connectivity?",
+      "intent": "Technical",
+      "sentiment": "Neutral",
+      "priority": "Medium",
+      "retrieved_chunk_ids": [
+        "zends-p01-c05",
+        "zends-p03-c05",
+        "zends-p02-c05",
+        "zends-p01-c02"
+      ],
+      "recommended_response": "I understand your concern. Based on the available ZENDS information: Services include voice calling, SMS, 5G mobile data, international roaming, voicemail, SIM and eSIM provisioning, customer support, mobile app management, and plan upgrades. Mobile connectivity also 1",
+      "abstained": false
+    },
+    {
+      "topic": "Product pricing",
+      "query": "What is the USA individual price for ZENDCloud VM Basic?",
+      "intent": "Product Inquiry",
+      "sentiment": "Neutral",
+      "priority": "Low",
+      "retrieved_chunk_ids": [
+        "zends-p03-c01",
+        "zends-p02-c04",
+        "zends-p01-c02",
+        "zends-p03-c03"
+      ],
+      "recommended_response": "I understand your concern. Based on the available ZENDS information: 4. Cloud & Data Center Services ZENDCloud VM Basic is priced at $40 in the USA, $24 in India, $44 in Singapore, and $32 in Thailand for individual users, and $35 in the USA, $21 in India, $38 in Singapore, and $28 in Thailand for enterprise customers. ZENDCloud VM Pro is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $70 in the USA, $42 in India, $77 in Singapore, and $56 in Thailand for enterprise customers. ZENDCloud VM Enterprise is priced at $150 in the USA, $90 in India, $165 in Singapore, and $120 in Thailand for individual users, and $130 in the USA, $78 in India, $143 in Singapore, and $104 in Thailand for enterprise customers. ZENDStorage 1TB is priced at $20 in the USA, $12 in India, $22 in Singapore, and $16 in Thailand for individual users, and $15 in the USA, $9 in India, $16 in Singapore,",
+      "abstained": false
+    },
+    {
+      "topic": "Country pricing",
+      "query": "What is Prepaid Basic priced at in India for individual users?",
+      "intent": "Product Inquiry",
+      "sentiment": "Neutral",
+      "priority": "Low",
+      "retrieved_chunk_ids": [
+        "zends-p01-c02",
+        "zends-p01-c03",
+        "zends-p02-c02",
+        "zends-p03-c01"
+      ],
+      "recommended_response": "I understand your concern. Based on the available ZENDS information: which every product is supported by digital platforms, billing engines, customer portals, and API-based provisioning systems. Product Group Hierarchy ZENDS organizes its offerings into 5 product groups, each containing multiple product categories, which in turn contain products and services spanning across 4 countries: India, USA, Singapore, and Thailand. 1. Mobile Connectivity ZENDS provides prepaid and postpaid mobile services using a 5G-enabled telecom network. The prepaid mobile plans include Prepaid Basic with 5GB, priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $48 in the USA, $28 in India, $56 in Singapore, and $38 in Thailand for enterprise customers. Prepaid Plus with 20GB is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $60 in the USA, $29 in India, $76 in",
+      "abstained": false
+    },
+    {
+      "topic": "Enterprise",
+      "query": "How does ZENDOffice Net 200 pricing differ for enterprise customers?",
+      "intent": "Product Inquiry",
+      "sentiment": "Neutral",
+      "priority": "Low",
+      "retrieved_chunk_ids": [
+        "zends-p02-c04",
+        "zends-p03-c01",
+        "zends-p02-c02",
+        "zends-p03-c02"
+      ],
+      "recommended_response": "I understand your concern. Based on the available ZENDS information: 1 Gbps is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $70 in the USA, $42 in India, $77 in Singapore, and $56 in Thailand for enterprise customers. Office broadband includes ZENDOffice Net 200 priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $55 in the USA, $33 in India, $61 in Singapore, and $44 in Thailand for enterprise customers. ZENDOffice Net 500 is priced at $90 in the USA, $54 in India, $99 in Singapore, and $72 in Thailand for individual users, and $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for enterprise customers. ZENDOffice Net 1G is priced at $150 in the USA, $90 in India, $165 in Singapore, and $120 in Thailand for individual users, and $130 in the USA, $78 in India, $143 in Singapore, and $104 in Thailand for enterprise customers.",
+      "abstained": false
+    },
+    {
+      "topic": "SLA",
+      "query": "What uptime SLA applies to enterprise users?",
+      "intent": "Product Inquiry",
+      "sentiment": "Neutral",
+      "priority": "Low",
+      "retrieved_chunk_ids": [
+        "zends-p04-c02",
+        "zends-p02-c05",
+        "zends-p04-c01",
+        "zends-p03-c06"
+      ],
+      "recommended_response": "I understand your concern. Based on the available ZENDS information: SLA: Individual users have 98.5% uptime, business users 99.5% uptime, and enterprise users 99.9% uptime.",
+      "abstained": false
+    },
+    {
+      "topic": "Privacy",
+      "query": "How does ZENDS protect customer data?",
+      "intent": "Product Inquiry",
+      "sentiment": "Neutral",
+      "priority": "Low",
+      "retrieved_chunk_ids": [
+        "zends-p01-c01",
+        "zends-p01-c02",
+        "zends-p03-c02",
+        "zends-p03-c03"
+      ],
+      "recommended_response": "I understand your concern. The available ZENDS knowledge does not provide enough information to answer this question.",
+      "abstained": true
+    },
+    {
+      "topic": "Fair usage",
+      "query": "What is the fair usage cap for unlimited plans?",
+      "intent": "Billing",
+      "sentiment": "Neutral",
+      "priority": "Low",
+      "retrieved_chunk_ids": [
+        "zends-p04-c04",
+        "zends-p04-c06",
+        "zends-p04-c01",
+        "zends-p01-c02"
+      ],
+      "recommended_response": "I understand your concern. Based on the available ZENDS information: Fair Usage: Unlimited plans are capped at 1TB per month.",
+      "abstained": false
+    },
+    {
+      "topic": "Unsupported",
+      "query": "Who is the ZENDS chief executive officer?",
+      "intent": "Product Inquiry",
+      "sentiment": "Neutral",
+      "priority": "Low",
+      "retrieved_chunk_ids": [
+        "zends-p01-c01",
+        "zends-p01-c02",
+        "zends-p02-c04",
+        "zends-p03-c03"
+      ],
+      "recommended_response": "I understand your concern. The available ZENDS knowledge does not provide enough information to answer this question.",
+      "abstained": true
+    }
+  ]
+}

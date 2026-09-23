@@ -1,0 +1,15 @@
+{
+  "overlap": {
+    "train_test": 0,
+    "train_validation": 0,
+    "validation_test": 0
+  },
+  "passed": true,
+  "seed": 20260911,
+  "sizes": {
+    "test": 3000,
+    "train": 14000,
+    "validation": 3000
+  },
+  "strategy": "70/15/15 stratified jointly by intent and sentiment"
+}

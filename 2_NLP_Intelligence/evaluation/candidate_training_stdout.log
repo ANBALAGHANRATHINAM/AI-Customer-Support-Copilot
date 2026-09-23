@@ -1,0 +1,7 @@
+{'eval_loss': 1.136042594909668, 'eval_accuracy': 0.849, 'eval_precision_weighted': 0.8730658086997781, 'eval_recall_weighted': 0.849, 'eval_f1_weighted': 0.8328235166208973, 'eval_runtime': 106.0005, 'eval_samples_per_second': 28.302, 'eval_steps_per_second': 0.887, 'epoch': 0.99}
+{'train_runtime': 1873.2592, 'train_samples_per_second': 2.336, 'train_steps_per_second': 0.018, 'train_loss': 1.3785725761862362, 'epoch': 0.99}
+{
+  "candidate_model_dir": "C:\\Users\\smada\\OneDrive\\Desktop\\codes\\Copilot Project\\2_NLP_Intelligence\\models\\intent_distilbert_candidate",
+  "train_examples": 4375,
+  "validation_examples": 3000
+}

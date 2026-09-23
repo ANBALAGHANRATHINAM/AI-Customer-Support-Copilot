@@ -1,0 +1,582 @@
+{
+  "metric": "Hit@4: every expected source phrase for a test case occurs in its top four retrieved chunks.",
+  "cases": [
+    {
+      "topic": "Billing",
+      "query": "When are ZENDS bills issued and when can service be suspended?",
+      "expected_source_phrases": [
+        "Monthly billing in advance",
+        "Late payment after 7 days"
+      ],
+      "retrieved": [
+        {
+          "text": "ZENDS Communications Powering Digital Life Everywhere Company Overview ZENDS Communications is a next-generation global telecom and digital services provider delivering mobile connectivity, broadband, enterprise networking, cloud infrastructure, IoT, cybersecurity, and digital platforms. ZENDS serves both individual consumers and enterprise customers across multiple regions, enabling personal communication, business operations, cloud computing, and smart-city services. ZENDS operates across consumer telecom, enterprise telecom, cloud infrastructure, smart city and IoT, and digital media and collaboration. ZENDS follows a service-oriented architecture in which every product is supported by digital platforms, billing engines, customer portals, and API-based provisioning systems. Product Group Hierarchy",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "page": 1,
+            "chunk_id": "zends-p01-c01"
+          },
+          "distance": 0.4783672094345093
+        },
+        {
+          "text": "Billing: Monthly billing in advance. Enterprise customers receive consolidated invoices. Late payment after 7 days may suspend services.",
+          "metadata": {
+            "page": 3,
+            "policy_category": "Billing",
+            "source": "ZENDS Communications.pdf",
+            "chunk_id": "zends-p03-c06"
+          },
+          "distance": 0.5117081999778748
+        },
+        {
+          "text": "which every product is supported by digital platforms, billing engines, customer portals, and API-based provisioning systems. Product Group Hierarchy ZENDS organizes its offerings into 5 product groups, each containing multiple product categories, which in turn contain products and services spanning across 4 countries: India, USA, Singapore, and Thailand. 1. Mobile Connectivity ZENDS provides prepaid and postpaid mobile services using a 5G-enabled telecom network. The prepaid mobile plans include Prepaid Basic with 5GB, priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $48 in the USA, $28 in India, $56 in Singapore, and $38 in Thailand for enterprise customers. Prepaid Plus with 20GB is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $60 in the USA, $29 in India, $76 in",
+          "metadata": {
+            "page": 1,
+            "source": "ZENDS Communications.pdf",
+            "chunk_id": "zends-p01-c02"
+          },
+          "distance": 0.5659121870994568
+        },
+        {
+          "text": "Services include virtual machines, file storage, backup and disaster recovery, cloud networking, cloud migration support, API integrations, monitoring, and dedicated enterprise support. 5. IoT & Smart Solutions Products include ZENDSmart Traffic priced at $100 in the USA, $60 in India, $110 in Singapore, and $80 in Thailand for individual users, and $90 in the USA, $54 in India, $99 in Singapore, and $72 in Thailand for enterprise customers. ZENDSmart Lighting is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $70 in the USA, $42 in India, $77 in Singapore, and $56 in Thailand for enterprise customers. ZENDSmart Parking is priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $50 in the USA, $30 in India, $55 in Singapore, and $40 in Thailand for enterprise customers.",
+          "metadata": {
+            "chunk_id": "zends-p03-c03",
+            "page": 3,
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.5915384292602539
+        }
+      ],
+      "relevant_information_retrieved": true
+    },
+    {
+      "topic": "Refund",
+      "query": "What is the refund rule after I start using a ZENDS service?",
+      "expected_source_phrases": [
+        "Full refund within 7 days",
+        "usage is less than 10%"
+      ],
+      "retrieved": [
+        {
+          "text": "Refund: Full refund within 7 days if usage is less than 10%. Cloud services are non-refundable after activation. 3",
+          "metadata": {
+            "policy_category": "Refund",
+            "source": "ZENDS Communications.pdf",
+            "page": 3,
+            "chunk_id": "zends-p03-c07"
+          },
+          "distance": 0.5002031922340393
+        },
+        {
+          "text": "ZENDS Communications Powering Digital Life Everywhere Company Overview ZENDS Communications is a next-generation global telecom and digital services provider delivering mobile connectivity, broadband, enterprise networking, cloud infrastructure, IoT, cybersecurity, and digital platforms. ZENDS serves both individual consumers and enterprise customers across multiple regions, enabling personal communication, business operations, cloud computing, and smart-city services. ZENDS operates across consumer telecom, enterprise telecom, cloud infrastructure, smart city and IoT, and digital media and collaboration. ZENDS follows a service-oriented architecture in which every product is supported by digital platforms, billing engines, customer portals, and API-based provisioning systems. Product Group Hierarchy",
+          "metadata": {
+            "page": 1,
+            "chunk_id": "zends-p01-c01",
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.5304903388023376
+        },
+        {
+          "text": "which every product is supported by digital platforms, billing engines, customer portals, and API-based provisioning systems. Product Group Hierarchy ZENDS organizes its offerings into 5 product groups, each containing multiple product categories, which in turn contain products and services spanning across 4 countries: India, USA, Singapore, and Thailand. 1. Mobile Connectivity ZENDS provides prepaid and postpaid mobile services using a 5G-enabled telecom network. The prepaid mobile plans include Prepaid Basic with 5GB, priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $48 in the USA, $28 in India, $56 in Singapore, and $38 in Thailand for enterprise customers. Prepaid Plus with 20GB is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $60 in the USA, $29 in India, $76 in",
+          "metadata": {
+            "page": 1,
+            "chunk_id": "zends-p01-c02",
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.5657246112823486
+        },
+        {
+          "text": "priced at $20 in the USA, $12 in India, $22 in Singapore, and $16 in Thailand for individual users, and $15 in the USA, $9 in India, $16 in Singapore, and $12 in Thailand for enterprise customers. ZENDStorage 10TB is priced at $120 in the USA, $72 in India, $132 in Singapore, and $96 in Thailand for individual users, and $100 in the USA, $60 in India, $110 in Singapore, and $80 in Thailand for enterprise customers. ZENDArchive Storage is priced at $50 in the USA, $30 in India, $55 in Singapore, and $40 in Thailand for individual users, and $40 in the USA, $24 in India, $44 in Singapore, and $32 in Thailand for enterprise customers.",
+          "metadata": {
+            "chunk_id": "zends-p03-c02",
+            "source": "ZENDS Communications.pdf",
+            "page": 3
+          },
+          "distance": 0.5669440627098083
+        }
+      ],
+      "relevant_information_retrieved": true
+    },
+    {
+      "topic": "Contract",
+      "query": "Is there a minimum contract for enterprise customers?",
+      "expected_source_phrases": [
+        "minimum 12-month contract"
+      ],
+      "retrieved": [
+        {
+          "text": "Contracts: Individual users have no long-term lock-in. Enterprise customers have a minimum 12-month contract.",
+          "metadata": {
+            "page": 4,
+            "policy_category": "Contracts",
+            "source": "ZENDS Communications.pdf",
+            "chunk_id": "zends-p04-c01"
+          },
+          "distance": 0.2516319155693054
+        },
+        {
+          "text": "Billing: Monthly billing in advance. Enterprise customers receive consolidated invoices. Late payment after 7 days may suspend services.",
+          "metadata": {
+            "chunk_id": "zends-p03-c06",
+            "source": "ZENDS Communications.pdf",
+            "page": 3,
+            "policy_category": "Billing"
+          },
+          "distance": 0.5633694529533386
+        },
+        {
+          "text": "Discounts: Bulk enterprise users can receive up to 30% discount. Annual payment discount is 15%. 4",
+          "metadata": {
+            "chunk_id": "zends-p04-c06",
+            "page": 4,
+            "policy_category": "Discounts",
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.5729888677597046
+        },
+        {
+          "text": "Fair Usage: Unlimited plans are capped at 1TB per month.",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "chunk_id": "zends-p04-c04",
+            "policy_category": "Fair Usage",
+            "page": 4
+          },
+          "distance": 0.6202670335769653
+        }
+      ],
+      "relevant_information_retrieved": true
+    },
+    {
+      "topic": "SLA",
+      "query": "What uptime SLA applies to enterprise users?",
+      "expected_source_phrases": [
+        "enterprise users 99.9% uptime"
+      ],
+      "retrieved": [
+        {
+          "text": "SLA: Individual users have 98.5% uptime, business users 99.5% uptime, and enterprise users 99.9% uptime.",
+          "metadata": {
+            "chunk_id": "zends-p04-c02",
+            "page": 4,
+            "policy_category": "SLA",
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.20719927549362183
+        },
+        {
+          "text": "Services include dedicated bandwidth, MPLS connectivity, SLA-backed uptime, priority troubleshooting, customized network solutions for enterprises, and optional security and monitoring add-ons. 2",
+          "metadata": {
+            "chunk_id": "zends-p02-c05",
+            "page": 2,
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.5000796318054199
+        },
+        {
+          "text": "Contracts: Individual users have no long-term lock-in. Enterprise customers have a minimum 12-month contract.",
+          "metadata": {
+            "chunk_id": "zends-p04-c01",
+            "policy_category": "Contracts",
+            "source": "ZENDS Communications.pdf",
+            "page": 4
+          },
+          "distance": 0.5269648432731628
+        },
+        {
+          "text": "Billing: Monthly billing in advance. Enterprise customers receive consolidated invoices. Late payment after 7 days may suspend services.",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "policy_category": "Billing",
+            "chunk_id": "zends-p03-c06",
+            "page": 3
+          },
+          "distance": 0.5402016043663025
+        }
+      ],
+      "relevant_information_retrieved": true
+    },
+    {
+      "topic": "Privacy",
+      "query": "How does ZENDS protect customer data?",
+      "expected_source_phrases": [
+        "GDPR compliant",
+        "encrypted data at rest and in transit"
+      ],
+      "retrieved": [
+        {
+          "text": "ZENDS Communications Powering Digital Life Everywhere Company Overview ZENDS Communications is a next-generation global telecom and digital services provider delivering mobile connectivity, broadband, enterprise networking, cloud infrastructure, IoT, cybersecurity, and digital platforms. ZENDS serves both individual consumers and enterprise customers across multiple regions, enabling personal communication, business operations, cloud computing, and smart-city services. ZENDS operates across consumer telecom, enterprise telecom, cloud infrastructure, smart city and IoT, and digital media and collaboration. ZENDS follows a service-oriented architecture in which every product is supported by digital platforms, billing engines, customer portals, and API-based provisioning systems. Product Group Hierarchy",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "chunk_id": "zends-p01-c01",
+            "page": 1
+          },
+          "distance": 0.35203564167022705
+        },
+        {
+          "text": "which every product is supported by digital platforms, billing engines, customer portals, and API-based provisioning systems. Product Group Hierarchy ZENDS organizes its offerings into 5 product groups, each containing multiple product categories, which in turn contain products and services spanning across 4 countries: India, USA, Singapore, and Thailand. 1. Mobile Connectivity ZENDS provides prepaid and postpaid mobile services using a 5G-enabled telecom network. The prepaid mobile plans include Prepaid Basic with 5GB, priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $48 in the USA, $28 in India, $56 in Singapore, and $38 in Thailand for enterprise customers. Prepaid Plus with 20GB is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $60 in the USA, $29 in India, $76 in",
+          "metadata": {
+            "chunk_id": "zends-p01-c02",
+            "page": 1,
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.5286976099014282
+        },
+        {
+          "text": "priced at $20 in the USA, $12 in India, $22 in Singapore, and $16 in Thailand for individual users, and $15 in the USA, $9 in India, $16 in Singapore, and $12 in Thailand for enterprise customers. ZENDStorage 10TB is priced at $120 in the USA, $72 in India, $132 in Singapore, and $96 in Thailand for individual users, and $100 in the USA, $60 in India, $110 in Singapore, and $80 in Thailand for enterprise customers. ZENDArchive Storage is priced at $50 in the USA, $30 in India, $55 in Singapore, and $40 in Thailand for individual users, and $40 in the USA, $24 in India, $44 in Singapore, and $32 in Thailand for enterprise customers.",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "chunk_id": "zends-p03-c02",
+            "page": 3
+          },
+          "distance": 0.547076404094696
+        },
+        {
+          "text": "Services include virtual machines, file storage, backup and disaster recovery, cloud networking, cloud migration support, API integrations, monitoring, and dedicated enterprise support. 5. IoT & Smart Solutions Products include ZENDSmart Traffic priced at $100 in the USA, $60 in India, $110 in Singapore, and $80 in Thailand for individual users, and $90 in the USA, $54 in India, $99 in Singapore, and $72 in Thailand for enterprise customers. ZENDSmart Lighting is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $70 in the USA, $42 in India, $77 in Singapore, and $56 in Thailand for enterprise customers. ZENDSmart Parking is priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $50 in the USA, $30 in India, $55 in Singapore, and $40 in Thailand for enterprise customers.",
+          "metadata": {
+            "page": 3,
+            "source": "ZENDS Communications.pdf",
+            "chunk_id": "zends-p03-c03"
+          },
+          "distance": 0.5844461917877197
+        }
+      ],
+      "relevant_information_retrieved": false
+    },
+    {
+      "topic": "Fair usage",
+      "query": "What is the fair usage cap for unlimited plans?",
+      "expected_source_phrases": [
+        "capped at 1TB per month"
+      ],
+      "retrieved": [
+        {
+          "text": "Fair Usage: Unlimited plans are capped at 1TB per month.",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "page": 4,
+            "chunk_id": "zends-p04-c04",
+            "policy_category": "Fair Usage"
+          },
+          "distance": 0.1773098111152649
+        },
+        {
+          "text": "Discounts: Bulk enterprise users can receive up to 30% discount. Annual payment discount is 15%. 4",
+          "metadata": {
+            "chunk_id": "zends-p04-c06",
+            "page": 4,
+            "source": "ZENDS Communications.pdf",
+            "policy_category": "Discounts"
+          },
+          "distance": 0.5535764694213867
+        },
+        {
+          "text": "Contracts: Individual users have no long-term lock-in. Enterprise customers have a minimum 12-month contract.",
+          "metadata": {
+            "chunk_id": "zends-p04-c01",
+            "policy_category": "Contracts",
+            "source": "ZENDS Communications.pdf",
+            "page": 4
+          },
+          "distance": 0.5723133087158203
+        },
+        {
+          "text": "which every product is supported by digital platforms, billing engines, customer portals, and API-based provisioning systems. Product Group Hierarchy ZENDS organizes its offerings into 5 product groups, each containing multiple product categories, which in turn contain products and services spanning across 4 countries: India, USA, Singapore, and Thailand. 1. Mobile Connectivity ZENDS provides prepaid and postpaid mobile services using a 5G-enabled telecom network. The prepaid mobile plans include Prepaid Basic with 5GB, priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $48 in the USA, $28 in India, $56 in Singapore, and $38 in Thailand for enterprise customers. Prepaid Plus with 20GB is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $60 in the USA, $29 in India, $76 in",
+          "metadata": {
+            "page": 1,
+            "chunk_id": "zends-p01-c02",
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.6721969842910767
+        }
+      ],
+      "relevant_information_retrieved": true
+    },
+    {
+      "topic": "Support tiers",
+      "query": "Which support tiers does ZENDS offer?",
+      "expected_source_phrases": [
+        "Standard, Priority, and Enterprise Dedicated Support"
+      ],
+      "retrieved": [
+        {
+          "text": "ZENDS Communications Powering Digital Life Everywhere Company Overview ZENDS Communications is a next-generation global telecom and digital services provider delivering mobile connectivity, broadband, enterprise networking, cloud infrastructure, IoT, cybersecurity, and digital platforms. ZENDS serves both individual consumers and enterprise customers across multiple regions, enabling personal communication, business operations, cloud computing, and smart-city services. ZENDS operates across consumer telecom, enterprise telecom, cloud infrastructure, smart city and IoT, and digital media and collaboration. ZENDS follows a service-oriented architecture in which every product is supported by digital platforms, billing engines, customer portals, and API-based provisioning systems. Product Group Hierarchy",
+          "metadata": {
+            "chunk_id": "zends-p01-c01",
+            "page": 1,
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.3125131130218506
+        },
+        {
+          "text": "Support Tiers: Standard, Priority, and Enterprise Dedicated Support.",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "page": 4,
+            "policy_category": "Support Tiers",
+            "chunk_id": "zends-p04-c05"
+          },
+          "distance": 0.4157649278640747
+        },
+        {
+          "text": "which every product is supported by digital platforms, billing engines, customer portals, and API-based provisioning systems. Product Group Hierarchy ZENDS organizes its offerings into 5 product groups, each containing multiple product categories, which in turn contain products and services spanning across 4 countries: India, USA, Singapore, and Thailand. 1. Mobile Connectivity ZENDS provides prepaid and postpaid mobile services using a 5G-enabled telecom network. The prepaid mobile plans include Prepaid Basic with 5GB, priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $48 in the USA, $28 in India, $56 in Singapore, and $38 in Thailand for enterprise customers. Prepaid Plus with 20GB is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $60 in the USA, $29 in India, $76 in",
+          "metadata": {
+            "page": 1,
+            "chunk_id": "zends-p01-c02",
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.4950575828552246
+        },
+        {
+          "text": "a, $110 in Singapore, and $80 in Thailand for enterprise customers. ZENDBiz Connect 1G is priced at $200 in the USA, $120 in India, $220 in Singapore, and $160 in Thailand for individual users, and $180 in the USA, $108 in India, $198 in Singapore, and $144 in Thailand for enterprise customers. ZENDEnterprise Ultra is priced at $300 in the USA, $180 in India, $330 in Singapore, and $240 in Thailand for individual users, and $280 in the USA, $168 in India, $308 in Singapore, and $224 in Thailand for enterprise customers. ZENDEnterprise Dedicated is priced at $500 in the USA, $300 in India, $550 in Singapore, and $400 in Thailand for individual users, and $450 in the USA, $270 in India, $495 in Singapore, and $360 in Thailand for enterprise customers.",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "chunk_id": "zends-p02-c04",
+            "page": 2
+          },
+          "distance": 0.550183117389679
+        }
+      ],
+      "relevant_information_retrieved": true
+    },
+    {
+      "topic": "Discounts",
+      "query": "What enterprise bulk and annual payment discounts are offered?",
+      "expected_source_phrases": [
+        "up to 30% discount",
+        "Annual payment discount is 15%"
+      ],
+      "retrieved": [
+        {
+          "text": "Discounts: Bulk enterprise users can receive up to 30% discount. Annual payment discount is 15%. 4",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "chunk_id": "zends-p04-c06",
+            "policy_category": "Discounts",
+            "page": 4
+          },
+          "distance": 0.1748279333114624
+        },
+        {
+          "text": "Fair Usage: Unlimited plans are capped at 1TB per month.",
+          "metadata": {
+            "chunk_id": "zends-p04-c04",
+            "page": 4,
+            "policy_category": "Fair Usage",
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.5709275603294373
+        },
+        {
+          "text": "Billing: Monthly billing in advance. Enterprise customers receive consolidated invoices. Late payment after 7 days may suspend services.",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "page": 3,
+            "policy_category": "Billing",
+            "chunk_id": "zends-p03-c06"
+          },
+          "distance": 0.573340654373169
+        },
+        {
+          "text": "h 20GB is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $60 in the USA, $29 in India, $76 in Singapore, and $52 in Thailand for enterprise customers. Prepaid Unlimited is priced at $100 in the USA, $60 in India, $110 in Singapore, and $80 in Thailand for individual users, and $80 in the USA, $50 in India, $90 in Singapore, and $70 in Thailand for enterprise customers. Postpaid Silver with 50GB is priced at $70 in the USA, $42 in India, $77 in Singapore, and $56 in Thailand for individual users, and $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for enterprise customers. Postpaid Gold with 100GB is priced at $100 in the USA, $60 in India, $110 in Singapore, and $80 in Thailand for individual users, and $80 in the USA, $50 in India, $90 in Singapore, and $70 in Thailand for enterprise customers.",
+          "metadata": {
+            "chunk_id": "zends-p01-c03",
+            "source": "ZENDS Communications.pdf",
+            "page": 1
+          },
+          "distance": 0.5911557674407959
+        }
+      ],
+      "relevant_information_retrieved": true
+    },
+    {
+      "topic": "Product information",
+      "query": "What services are included with mobile connectivity?",
+      "expected_source_phrases": [
+        "voice calling",
+        "SIM and eSIM provisioning"
+      ],
+      "retrieved": [
+        {
+          "text": "Services include voice calling, SMS, 5G mobile data, international roaming, voicemail, SIM and eSIM provisioning, customer support, mobile app management, and plan upgrades. Mobile connectivity also 1",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "page": 1,
+            "chunk_id": "zends-p01-c05"
+          },
+          "distance": 0.26352888345718384
+        },
+        {
+          "text": "Services include sensor connectivity, real-time data processing, device management, analytics, smart city integrations, remote monitoring, reporting dashboards, and predictive maintenance. Company Policies",
+          "metadata": {
+            "page": 3,
+            "chunk_id": "zends-p03-c05",
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.4217716455459595
+        },
+        {
+          "text": "Services include dedicated bandwidth, MPLS connectivity, SLA-backed uptime, priority troubleshooting, customized network solutions for enterprises, and optional security and monitoring add-ons. 2",
+          "metadata": {
+            "chunk_id": "zends-p02-c05",
+            "source": "ZENDS Communications.pdf",
+            "page": 2
+          },
+          "distance": 0.4313511848449707
+        },
+        {
+          "text": "which every product is supported by digital platforms, billing engines, customer portals, and API-based provisioning systems. Product Group Hierarchy ZENDS organizes its offerings into 5 product groups, each containing multiple product categories, which in turn contain products and services spanning across 4 countries: India, USA, Singapore, and Thailand. 1. Mobile Connectivity ZENDS provides prepaid and postpaid mobile services using a 5G-enabled telecom network. The prepaid mobile plans include Prepaid Basic with 5GB, priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $48 in the USA, $28 in India, $56 in Singapore, and $38 in Thailand for enterprise customers. Prepaid Plus with 20GB is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $60 in the USA, $29 in India, $76 in",
+          "metadata": {
+            "page": 1,
+            "source": "ZENDS Communications.pdf",
+            "chunk_id": "zends-p01-c02"
+          },
+          "distance": 0.5713212490081787
+        }
+      ],
+      "relevant_information_retrieved": true
+    },
+    {
+      "topic": "Pricing",
+      "query": "What is the USA individual price for ZENDCloud VM Basic?",
+      "expected_source_phrases": [
+        "ZENDCloud VM Basic is priced at $40 in the USA"
+      ],
+      "retrieved": [
+        {
+          "text": "4. Cloud & Data Center Services ZENDCloud VM Basic is priced at $40 in the USA, $24 in India, $44 in Singapore, and $32 in Thailand for individual users, and $35 in the USA, $21 in India, $38 in Singapore, and $28 in Thailand for enterprise customers. ZENDCloud VM Pro is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $70 in the USA, $42 in India, $77 in Singapore, and $56 in Thailand for enterprise customers. ZENDCloud VM Enterprise is priced at $150 in the USA, $90 in India, $165 in Singapore, and $120 in Thailand for individual users, and $130 in the USA, $78 in India, $143 in Singapore, and $104 in Thailand for enterprise customers. ZENDStorage 1TB is priced at $20 in the USA, $12 in India, $22 in Singapore, and $16 in Thailand for individual users, and $15 in the USA, $9 in India, $16 in Singapore,",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "page": 3,
+            "chunk_id": "zends-p03-c01"
+          },
+          "distance": 0.21987009048461914
+        },
+        {
+          "text": "a, $110 in Singapore, and $80 in Thailand for enterprise customers. ZENDBiz Connect 1G is priced at $200 in the USA, $120 in India, $220 in Singapore, and $160 in Thailand for individual users, and $180 in the USA, $108 in India, $198 in Singapore, and $144 in Thailand for enterprise customers. ZENDEnterprise Ultra is priced at $300 in the USA, $180 in India, $330 in Singapore, and $240 in Thailand for individual users, and $280 in the USA, $168 in India, $308 in Singapore, and $224 in Thailand for enterprise customers. ZENDEnterprise Dedicated is priced at $500 in the USA, $300 in India, $550 in Singapore, and $400 in Thailand for individual users, and $450 in the USA, $270 in India, $495 in Singapore, and $360 in Thailand for enterprise customers.",
+          "metadata": {
+            "chunk_id": "zends-p02-c04",
+            "page": 2,
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.37450385093688965
+        },
+        {
+          "text": "which every product is supported by digital platforms, billing engines, customer portals, and API-based provisioning systems. Product Group Hierarchy ZENDS organizes its offerings into 5 product groups, each containing multiple product categories, which in turn contain products and services spanning across 4 countries: India, USA, Singapore, and Thailand. 1. Mobile Connectivity ZENDS provides prepaid and postpaid mobile services using a 5G-enabled telecom network. The prepaid mobile plans include Prepaid Basic with 5GB, priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $48 in the USA, $28 in India, $56 in Singapore, and $38 in Thailand for enterprise customers. Prepaid Plus with 20GB is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $60 in the USA, $29 in India, $76 in",
+          "metadata": {
+            "chunk_id": "zends-p01-c02",
+            "page": 1,
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.3752923607826233
+        },
+        {
+          "text": "Services include virtual machines, file storage, backup and disaster recovery, cloud networking, cloud migration support, API integrations, monitoring, and dedicated enterprise support. 5. IoT & Smart Solutions Products include ZENDSmart Traffic priced at $100 in the USA, $60 in India, $110 in Singapore, and $80 in Thailand for individual users, and $90 in the USA, $54 in India, $99 in Singapore, and $72 in Thailand for enterprise customers. ZENDSmart Lighting is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $70 in the USA, $42 in India, $77 in Singapore, and $56 in Thailand for enterprise customers. ZENDSmart Parking is priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $50 in the USA, $30 in India, $55 in Singapore, and $40 in Thailand for enterprise customers.",
+          "metadata": {
+            "page": 3,
+            "source": "ZENDS Communications.pdf",
+            "chunk_id": "zends-p03-c03"
+          },
+          "distance": 0.4025518298149109
+        }
+      ],
+      "relevant_information_retrieved": true
+    },
+    {
+      "topic": "Country product information",
+      "query": "What is Prepaid Basic priced at in India for individual users?",
+      "expected_source_phrases": [
+        "$36 in India"
+      ],
+      "retrieved": [
+        {
+          "text": "which every product is supported by digital platforms, billing engines, customer portals, and API-based provisioning systems. Product Group Hierarchy ZENDS organizes its offerings into 5 product groups, each containing multiple product categories, which in turn contain products and services spanning across 4 countries: India, USA, Singapore, and Thailand. 1. Mobile Connectivity ZENDS provides prepaid and postpaid mobile services using a 5G-enabled telecom network. The prepaid mobile plans include Prepaid Basic with 5GB, priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $48 in the USA, $28 in India, $56 in Singapore, and $38 in Thailand for enterprise customers. Prepaid Plus with 20GB is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $60 in the USA, $29 in India, $76 in",
+          "metadata": {
+            "page": 1,
+            "chunk_id": "zends-p01-c02",
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.35480499267578125
+        },
+        {
+          "text": "h 20GB is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $60 in the USA, $29 in India, $76 in Singapore, and $52 in Thailand for enterprise customers. Prepaid Unlimited is priced at $100 in the USA, $60 in India, $110 in Singapore, and $80 in Thailand for individual users, and $80 in the USA, $50 in India, $90 in Singapore, and $70 in Thailand for enterprise customers. Postpaid Silver with 50GB is priced at $70 in the USA, $42 in India, $77 in Singapore, and $56 in Thailand for individual users, and $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for enterprise customers. Postpaid Gold with 100GB is priced at $100 in the USA, $60 in India, $110 in Singapore, and $80 in Thailand for individual users, and $80 in the USA, $50 in India, $90 in Singapore, and $70 in Thailand for enterprise customers.",
+          "metadata": {
+            "chunk_id": "zends-p01-c03",
+            "page": 1,
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.44789958000183105
+        },
+        {
+          "text": "1 Gbps is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $70 in the USA, $42 in India, $77 in Singapore, and $56 in Thailand for enterprise customers. Office broadband includes ZENDOffice Net 200 priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $55 in the USA, $33 in India, $61 in Singapore, and $44 in Thailand for enterprise customers. ZENDOffice Net 500 is priced at $90 in the USA, $54 in India, $99 in Singapore, and $72 in Thailand for individual users, and $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for enterprise customers. ZENDOffice Net 1G is priced at $150 in the USA, $90 in India, $165 in Singapore, and $120 in Thailand for individual users, and $130 in the USA, $78 in India, $143 in Singapore, and $104 in Thailand for enterprise customers.",
+          "metadata": {
+            "chunk_id": "zends-p02-c02",
+            "source": "ZENDS Communications.pdf",
+            "page": 2
+          },
+          "distance": 0.49636560678482056
+        },
+        {
+          "text": "4. Cloud & Data Center Services ZENDCloud VM Basic is priced at $40 in the USA, $24 in India, $44 in Singapore, and $32 in Thailand for individual users, and $35 in the USA, $21 in India, $38 in Singapore, and $28 in Thailand for enterprise customers. ZENDCloud VM Pro is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $70 in the USA, $42 in India, $77 in Singapore, and $56 in Thailand for enterprise customers. ZENDCloud VM Enterprise is priced at $150 in the USA, $90 in India, $165 in Singapore, and $120 in Thailand for individual users, and $130 in the USA, $78 in India, $143 in Singapore, and $104 in Thailand for enterprise customers. ZENDStorage 1TB is priced at $20 in the USA, $12 in India, $22 in Singapore, and $16 in Thailand for individual users, and $15 in the USA, $9 in India, $16 in Singapore,",
+          "metadata": {
+            "chunk_id": "zends-p03-c01",
+            "page": 3,
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.5033624172210693
+        }
+      ],
+      "relevant_information_retrieved": true
+    },
+    {
+      "topic": "Customer type",
+      "query": "How does ZENDOffice Net 200 pricing differ for enterprise customers?",
+      "expected_source_phrases": [
+        "$55 in the USA",
+        "$33 in India"
+      ],
+      "retrieved": [
+        {
+          "text": "a, $110 in Singapore, and $80 in Thailand for enterprise customers. ZENDBiz Connect 1G is priced at $200 in the USA, $120 in India, $220 in Singapore, and $160 in Thailand for individual users, and $180 in the USA, $108 in India, $198 in Singapore, and $144 in Thailand for enterprise customers. ZENDEnterprise Ultra is priced at $300 in the USA, $180 in India, $330 in Singapore, and $240 in Thailand for individual users, and $280 in the USA, $168 in India, $308 in Singapore, and $224 in Thailand for enterprise customers. ZENDEnterprise Dedicated is priced at $500 in the USA, $300 in India, $550 in Singapore, and $400 in Thailand for individual users, and $450 in the USA, $270 in India, $495 in Singapore, and $360 in Thailand for enterprise customers.",
+          "metadata": {
+            "page": 2,
+            "chunk_id": "zends-p02-c04",
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.3281829357147217
+        },
+        {
+          "text": "4. Cloud & Data Center Services ZENDCloud VM Basic is priced at $40 in the USA, $24 in India, $44 in Singapore, and $32 in Thailand for individual users, and $35 in the USA, $21 in India, $38 in Singapore, and $28 in Thailand for enterprise customers. ZENDCloud VM Pro is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $70 in the USA, $42 in India, $77 in Singapore, and $56 in Thailand for enterprise customers. ZENDCloud VM Enterprise is priced at $150 in the USA, $90 in India, $165 in Singapore, and $120 in Thailand for individual users, and $130 in the USA, $78 in India, $143 in Singapore, and $104 in Thailand for enterprise customers. ZENDStorage 1TB is priced at $20 in the USA, $12 in India, $22 in Singapore, and $16 in Thailand for individual users, and $15 in the USA, $9 in India, $16 in Singapore,",
+          "metadata": {
+            "chunk_id": "zends-p03-c01",
+            "page": 3,
+            "source": "ZENDS Communications.pdf"
+          },
+          "distance": 0.3306970000267029
+        },
+        {
+          "text": "1 Gbps is priced at $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for individual users, and $70 in the USA, $42 in India, $77 in Singapore, and $56 in Thailand for enterprise customers. Office broadband includes ZENDOffice Net 200 priced at $60 in the USA, $36 in India, $66 in Singapore, and $48 in Thailand for individual users, and $55 in the USA, $33 in India, $61 in Singapore, and $44 in Thailand for enterprise customers. ZENDOffice Net 500 is priced at $90 in the USA, $54 in India, $99 in Singapore, and $72 in Thailand for individual users, and $80 in the USA, $48 in India, $88 in Singapore, and $64 in Thailand for enterprise customers. ZENDOffice Net 1G is priced at $150 in the USA, $90 in India, $165 in Singapore, and $120 in Thailand for individual users, and $130 in the USA, $78 in India, $143 in Singapore, and $104 in Thailand for enterprise customers.",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "chunk_id": "zends-p02-c02",
+            "page": 2
+          },
+          "distance": 0.3386027216911316
+        },
+        {
+          "text": "priced at $20 in the USA, $12 in India, $22 in Singapore, and $16 in Thailand for individual users, and $15 in the USA, $9 in India, $16 in Singapore, and $12 in Thailand for enterprise customers. ZENDStorage 10TB is priced at $120 in the USA, $72 in India, $132 in Singapore, and $96 in Thailand for individual users, and $100 in the USA, $60 in India, $110 in Singapore, and $80 in Thailand for enterprise customers. ZENDArchive Storage is priced at $50 in the USA, $30 in India, $55 in Singapore, and $40 in Thailand for individual users, and $40 in the USA, $24 in India, $44 in Singapore, and $32 in Thailand for enterprise customers.",
+          "metadata": {
+            "source": "ZENDS Communications.pdf",
+            "page": 3,
+            "chunk_id": "zends-p03-c02"
+          },
+          "distance": 0.36962246894836426
+        }
+      ],
+      "relevant_information_retrieved": true
+    }
+  ],
+  "hit_at_4": 0.9166666666666666,
+  "successful_cases": 11,
+  "total_cases": 12
+}
