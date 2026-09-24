@@ -37,6 +37,7 @@ POLICY_QUERY_TERMS = {
     "protect customer data": "Data Privacy",
     "protect data": "Data Privacy",
     "privacy": "Data Privacy",
+    "gdpr": "Data Privacy",
     "billing": "Billing",
     "bill": "Billing",
     "bills": "Billing",
@@ -104,6 +105,18 @@ PRODUCT_NAME_PATTERNS = (
     re.compile(r"\b(ZEND[A-Za-z]+(?:\s+[A-Za-z0-9]+){0,3}?)\s+(?:is\s+)?priced at", re.I),
 )
 UNSUPPORTED_POLICY = re.compile(r"\b(?:cancel|cancellation|terminate|termination)\b", re.I)
+ARTIFACT_REQUEST = re.compile(
+    r"^\s*(?:(?:please|can you|could you|would you)\s+)?"
+    r"(?:write|create|generate|build|draft|produce|make|give me)\b"
+    r"[^?.]{0,120}\b(?:code|program|script|poem|essay|email|letter|report)\b",
+    re.I,
+)
+INSTRUCTIONAL_PROGRAMMING_REQUEST = re.compile(
+    r"^\s*how\s+(?:do|can|could|would)\s+(?:i|we)\s+"
+    r"(?:(?:write|create|generate|build|make)\b[^?.]{0,120}\b(?:code|program|script)\b"
+    r"|programmatically\s+\w+)",
+    re.I,
+)
 
 
 @dataclass(frozen=True)
@@ -180,6 +193,11 @@ def _policy_category(query: str, intent: str) -> str | None:
         if re.search(rf"(?<!\w){re.escape(term)}(?!\w)", normalized):
             return category
     return None
+
+
+def is_artifact_generation_request(query: str) -> bool:
+    """Identify requests to create an artifact rather than answer a support question."""
+    return bool(ARTIFACT_REQUEST.search(query) or INSTRUCTIONAL_PROGRAMMING_REQUEST.search(query))
 
 
 def expected_policy_category(query: str, intent: str) -> str | None:
@@ -418,7 +436,7 @@ def _source_sentences(text: str) -> list[str]:
     return [sentence.strip() for sentence in re.split(r"(?<=[.!?])\s+", text) if sentence.strip()]
 
 
-def _policy_answer(evidence: list[dict[str, Any]]) -> str | None:
+def _policy_answer(evidence: list[dict[str, Any]], query: str | None = None) -> str | None:
     """Create short source-derived wording for the explicit policy sections."""
     category = next((chunk["metadata"].get("policy_category") for chunk in evidence if chunk["metadata"].get("policy_category")), None)
     text = _evidence_text(evidence)
@@ -433,6 +451,12 @@ def _policy_answer(evidence: list[dict[str, Any]]) -> str | None:
             parts.append("Enterprise customers receive consolidated invoices.")
         if late:
             parts.append(f"Payments overdue by more than {late.group(1)} days may lead to service suspension.")
+        if query:
+            query_terms = _meaningful_terms(query)
+            ranked = [(len(query_terms & _meaningful_terms(part)), part) for part in parts]
+            best = max((score for score, _ in ranked), default=0)
+            if best >= 2 and sum(score == best for score, _ in ranked) == 1:
+                return next(part for score, part in ranked if score == best)
         return " ".join(parts) or None
     if category == "Refund":
         refund = re.search(r"Full refund within (\d+) days if usage is less than (\d+)%", text, re.I)
@@ -449,10 +473,10 @@ def _policy_answer(evidence: list[dict[str, Any]]) -> str | None:
     return None
 
 
-def deterministic_policy_answer(category: str, evidence: list[dict[str, Any]]) -> str | None:
+def deterministic_policy_answer(category: str, evidence: list[dict[str, Any]], *, query: str | None = None) -> str | None:
     """Use only chunks explicitly tagged with the requested PDF policy heading."""
     matching = [chunk for chunk in evidence if chunk["metadata"].get("policy_category") == category]
-    return _policy_answer(matching) if matching else None
+    return _policy_answer(matching, query=query) if matching else None
 
 
 def deterministic_product_list_answer(group: str, evidence: list[dict[str, Any]]) -> str | None:

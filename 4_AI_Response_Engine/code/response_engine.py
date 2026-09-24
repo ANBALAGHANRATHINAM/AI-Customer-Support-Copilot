@@ -23,6 +23,7 @@ from grounding import (
     deterministic_product_feature_answer,
     deterministic_product_list_answer,
     expected_policy_category,
+    is_artifact_generation_request,
     is_grounded_answer,
     policy_scope_note,
     resolve_query_request,
@@ -68,7 +69,8 @@ class ZendsResponseEngine:
         analysis = self.nlp_pipeline.predict(customer_query)
         cleaned_query = str(analysis["cleaned_text"])
         intent = str(analysis["intent"])
-        policy_category = expected_policy_category(cleaned_query, intent)
+        artifact_request = is_artifact_generation_request(cleaned_query)
+        policy_category = None if artifact_request else expected_policy_category(cleaned_query, intent)
         retrieved_context = self.retriever.retrieve(
             cleaned_query,
             policy_category=policy_category,
@@ -95,8 +97,10 @@ class ZendsResponseEngine:
         evidence = select_grounded_chunks(cleaned_query, evidence_intent, retrieved_context)
         prompt = build_response_prompt(customer_query=customer_query, analysis=analysis, chunks=evidence)
         generated = self.llm.generate(prompt)
-        if request.policy_category:
-            parts = [deterministic_policy_answer(request.policy_category, retrieved_context)]
+        if artifact_request:
+            answer = None
+        elif request.policy_category:
+            parts = [deterministic_policy_answer(request.policy_category, retrieved_context, query=cleaned_query)]
             if parts[0]:
                 parts.append(policy_scope_note(customer_query, request.policy_category, retrieved_context))
             if request.pricing_products:

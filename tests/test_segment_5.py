@@ -10,7 +10,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "5_Streamlit_Integration" / "code"))
 
-from ui_helpers import ABSTENTION_TEXT, OUT_OF_SCOPE_RESPONSE, apply_scope_guard, format_confidence, is_abstention, is_unrelated_to_retrieved_knowledge, priority_style
+from ui_helpers import ABSTENTION_TEXT, OUT_OF_SCOPE_RESPONSE, apply_scope_guard, display_response, format_confidence, is_abstention, is_unrelated_to_retrieved_knowledge, priority_style
 
 
 def test_presentation_helpers_format_confidence_priority_and_abstention() -> None:
@@ -42,6 +42,16 @@ def test_scope_guard_is_independent_of_response_generation() -> None:
     assert not is_unrelated_to_retrieved_knowledge("What cloud services are available?", abstained)
     assert not is_unrelated_to_retrieved_knowledge("What is the price of Prepaid Basic in India?", abstained)
     assert not is_unrelated_to_retrieved_knowledge("How much does Postpaid Gold cost in the USA?", abstained)
+    invoice_result = {
+        "recommended_response": "Enterprise customers receive consolidated invoices.",
+        "retrieved_context": [{
+            "text": "Billing: Monthly billing in advance. Enterprise customers receive consolidated invoices.",
+            "metadata": {"policy_category": "Billing"},
+        }],
+    }
+    assert not is_unrelated_to_retrieved_knowledge("Do enterprise customers receive consolidated invoices?", invoice_result)
+    assert is_unrelated_to_retrieved_knowledge("How do I write Python code to process invoices?", invoice_result)
+    assert is_unrelated_to_retrieved_knowledge("What are invoices?", invoice_result)
     assert OUT_OF_SCOPE_RESPONSE == "I'm here to help with ZENDS Communications services—how can I assist you today?"
     assert apply_scope_guard("Who is Virat Kohli?", abstained)["recommended_response"] == OUT_OF_SCOPE_RESPONSE
     guarded = apply_scope_guard("Write me a Python program.", incorrectly_answered)
@@ -50,6 +60,18 @@ def test_scope_guard_is_independent_of_response_generation() -> None:
     assert guarded["reason"] == "out_of_scope"
     assert apply_scope_guard("Who is the CEO of ZENDS Communications?", abstained) == abstained
     assert apply_scope_guard("My internet is not working.", abstained) == abstained
+
+
+def test_user_facing_abstention_preserves_internal_grounding_state() -> None:
+    result = {
+        "recommended_response": "The available ZENDS knowledge does not provide enough information to answer this question.",
+        "abstention": True,
+        "reason": "insufficient_grounded_evidence",
+    }
+    assert display_response(result) == OUT_OF_SCOPE_RESPONSE
+    assert result["recommended_response"].startswith(ABSTENTION_TEXT)
+    assert result["reason"] == "insufficient_grounded_evidence"
+    assert display_response({"recommended_response": "Enterprise customers receive consolidated invoices.", "abstention": False}) == "Enterprise customers receive consolidated invoices."
 
 
 def test_streamlit_entrypoint_reuses_segment_four_without_duplicate_ai_logic() -> None:

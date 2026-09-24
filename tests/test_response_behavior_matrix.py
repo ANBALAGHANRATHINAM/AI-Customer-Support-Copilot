@@ -41,6 +41,7 @@ def engine() -> ZendsResponseEngine:
         ("refund", "What is the ZENDS refund policy?", "within 7 days", "virtual machines"),
         ("cloud refund", "Are cloud services refundable after activation?", "not refundable after activation", "virtual machines"),
         ("billing", "How does ZENDS billing work?", "monthly in advance", "virtual machines"),
+        ("enterprise invoices", "Do enterprise customers receive consolidated invoices?", "Enterprise customers receive consolidated invoices.", "I'm here to help"),
         ("late payment", "What happens if an enterprise customer pays late?", "7 days", "virtual machines"),
         ("discount", "What discounts does ZENDS offer?", "30% discount", "virtual machines"),
         ("bulk discount", "How much discount can bulk enterprise customers receive?", "30% discount", "specific product and country"),
@@ -50,6 +51,7 @@ def engine() -> ZendsResponseEngine:
         ("fair usage", "What is the fair usage limit for unlimited plans?", "1TB per month", "virtual machines"),
         ("support tiers", "What support tiers does ZENDS offer?", "Enterprise Dedicated Support", "virtual machines"),
         ("privacy", "How does ZENDS protect customer data?", "encrypted data", "virtual machines"),
+        ("GDPR", "Is ZENDS GDPR compliant?", "GDPR compliant", "does not provide enough information"),
         ("cloud capability", "What cloud services are available?", "virtual machines", "refundable"),
         ("mobile capability", "What mobile services are available?", "voice calling", "refund"),
         ("home capability", "What Home & Office services are available?", "fiber connectivity", "refund"),
@@ -84,6 +86,9 @@ def test_supported_behavior_matrix(engine: ZendsResponseEngine, category: str, q
         "Who is Virat Kohli?",
         "What's the weather today?",
         "Write Python code.",
+        "Write me a Python program to calculate the ZENDS bill.",
+        "How do I write Python code to process invoices?",
+        "How do I programmatically calculate the ZENDS bill?",
     ],
 )
 def test_unknown_or_unsupported_questions_abstain(engine: ZendsResponseEngine, query: str) -> None:
@@ -103,6 +108,13 @@ def test_mixed_policy_questions_do_not_claim_product_specific_terms(engine: Zend
 def test_comparison_preserves_query_product_order(engine: ZendsResponseEngine) -> None:
     answer = engine.respond("Compare the prices of ZENDStorage 1TB and ZENDStorage 10TB in India.")["recommended_response"]
     assert answer.index("ZENDStorage 1TB") < answer.index("ZENDStorage 10TB")
+
+
+def test_enterprise_invoice_question_returns_only_the_requested_source_fact(engine: ZendsResponseEngine) -> None:
+    query = "Do enterprise customers receive consolidated invoices?"
+    result = apply_scope_guard(query, engine.respond(query))
+    assert result["recommended_response"] == "Enterprise customers receive consolidated invoices."
+    assert result["abstention"] is False
 
 
 def test_cancellation_does_not_inherit_a_model_billing_prediction(engine: ZendsResponseEngine) -> None:

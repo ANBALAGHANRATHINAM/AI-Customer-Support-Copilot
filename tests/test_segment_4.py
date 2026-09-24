@@ -13,7 +13,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "4_AI_Response_Engine" / "code"))
 
-from grounding import deterministic_pricing_answer, is_grounded_answer, select_grounded_chunks
+from grounding import deterministic_pricing_answer, is_artifact_generation_request, is_grounded_answer, select_grounded_chunks
 from response_engine import ZendsResponseEngine
 
 
@@ -145,6 +145,51 @@ def test_unsupported_query_abstains_without_using_irrelevant_company_fact() -> N
     assert "GDPR compliant" not in result["recommended_response"]
     assert result["abstention"] is True
     assert result["reason"] == "insufficient_grounded_evidence"
+
+
+@pytest.mark.parametrize("query", [
+    "Write me a Python program to calculate the ZENDS bill.",
+    "Create a script to calculate my ZENDS bill.",
+    "How do I write a Python program to calculate the ZENDS bill?",
+    "How do I write Python code to process invoices?",
+    "How can I create a Python script to calculate the ZENDS bill?",
+    "How do I programmatically calculate the ZENDS bill?",
+    "Can you write code to calculate the ZENDS bill?",
+])
+def test_artifact_request_abstains_before_billing_policy_routing(query: str) -> None:
+    billing = chunk("Billing: Monthly billing in advance. Enterprise customers receive consolidated invoices.", policy="Billing")
+    retriever = StubRetriever([billing])
+    result = ZendsResponseEngine(StubNLP(intent="Billing"), retriever, CaptureLLM()).respond(query)
+    assert retriever.policy_categories == [None]
+    assert result["abstention"] is True
+    assert result["reason"] == "insufficient_grounded_evidence"
+    assert "monthly billing" not in result["recommended_response"].lower()
+
+
+@pytest.mark.parametrize("query", [
+    "How does ZENDS billing work?",
+    "How are ZENDS bills calculated?",
+    "Why was my ZENDS bill charged?",
+    "What happens if I pay my bill late?",
+])
+def test_legitimate_billing_questions_are_not_artifact_requests(query: str) -> None:
+    assert not is_artifact_generation_request(query)
+    billing = chunk("Billing: Monthly billing in advance. Late payment after 7 days may suspend services.", policy="Billing")
+    retriever = StubRetriever([billing])
+    ZendsResponseEngine(StubNLP(intent="Billing"), retriever, CaptureLLM()).respond(query)
+    assert retriever.policy_categories == ["Billing"]
+
+
+def test_gdpr_question_uses_existing_data_privacy_record() -> None:
+    privacy = chunk(
+        "Data Privacy: GDPR compliant, ISO 27001 certified, and encrypted data at rest and in transit.",
+        policy="Data Privacy",
+    )
+    retriever = StubRetriever([privacy])
+    result = ZendsResponseEngine(StubNLP(intent="Product Inquiry"), retriever, CaptureLLM()).respond("Is ZENDS GDPR compliant?")
+    assert retriever.policy_categories == ["Data Privacy"]
+    assert "GDPR compliant" in result["recommended_response"]
+    assert result["abstention"] is False
 
 
 def test_known_privacy_retrieval_gap_abstains_instead_of_inventing_privacy_facts() -> None:

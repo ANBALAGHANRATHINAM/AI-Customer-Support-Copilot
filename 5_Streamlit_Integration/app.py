@@ -25,7 +25,7 @@ for path in (ROOT / "4_AI_Response_Engine" / "code", ROOT / "5_Streamlit_Integra
 
 from llm import StaticAcknowledgementLLM
 from response_engine import ZendsResponseEngine
-from ui_helpers import OUT_OF_SCOPE_RESPONSE, apply_scope_guard, format_confidence, is_abstention, priority_style
+from ui_helpers import OUT_OF_SCOPE_RESPONSE, apply_scope_guard, display_response, format_confidence, is_abstention, priority_style
 
 
 st.set_page_config(
@@ -1098,7 +1098,7 @@ def main() -> None:
         if turn.get("error"):
             render_error(str(turn["error"]))
         else:
-            render_message("assistant", str(turn["result"]["recommended_response"]))
+            render_message("assistant", display_response(turn["result"]))
             render_analysis(turn["result"])
             render_details(turn["result"])
     st.markdown('</div>', unsafe_allow_html=True)

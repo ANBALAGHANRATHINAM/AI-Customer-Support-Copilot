@@ -14,7 +14,7 @@ GENERIC_QUERY_TERMS = {
     "my", "of", "on", "please", "tell", "the", "to", "what", "where", "who", "with", "you", "your",
 }
 STRONG_ZENDS_SCOPE_TERMS = {
-    "bill", "billing", "broadband", "charged", "connectivity", "fiber", "gdpr", "internet", "invoice",
+    "bill", "billing", "broadband", "charged", "connectivity", "fiber", "gdpr", "internet",
     "iot", "mpls", "payment", "refund", "reimbursement", "roaming", "sla", "troubleshoot", "troubleshooting",
     "wifi", "zendfiber",
 }
@@ -83,6 +83,8 @@ def is_unrelated_to_retrieved_knowledge(query: str, result: dict[str, Any]) -> b
     for chunk in result.get("retrieved_context", []):
         context_terms = set(TOKEN_PATTERN.findall(str(chunk.get("text", "")).lower())) - GENERIC_QUERY_TERMS
         overlap = query_terms & context_terms
+        if raw_terms & {"invoice", "invoices"} and chunk.get("metadata", {}).get("policy_category") == "Billing" and len(overlap) >= 2:
+            return False
         if len(overlap) >= 2 and bool(query_terms & (PRODUCT_GROUP_TERMS | POLICY_TERMS | STRONG_ZENDS_SCOPE_TERMS)):
             return False
     return True
@@ -93,3 +95,8 @@ def apply_scope_guard(query: str, result: dict[str, Any]) -> dict[str, Any]:
     if is_unrelated_to_retrieved_knowledge(query, result):
         return {**result, "recommended_response": OUT_OF_SCOPE_RESPONSE, "abstention": True, "reason": "out_of_scope"}
     return result
+
+
+def display_response(result: dict[str, Any]) -> str:
+    """Show a friendly fallback without changing the engine's abstention record."""
+    return OUT_OF_SCOPE_RESPONSE if result.get("abstention") else str(result["recommended_response"])
