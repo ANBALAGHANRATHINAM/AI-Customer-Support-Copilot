@@ -29,6 +29,14 @@ class ZendsVectorStore:
     def count(self) -> int:
         return self.collection.count()
 
+    def source_records(self) -> list[dict]:
+        """Read persisted source text and provenance without recomputing embeddings."""
+        result = self.collection.get(include=["documents", "metadatas"])
+        return [
+            {"text": document, "metadata": metadata, "distance": 0.0}
+            for document, metadata in zip(result["documents"], result["metadatas"])
+        ]
+
     def reset(self) -> None:
         """Recreate only this named collection for a deterministic source rebuild."""
         self.client.delete_collection(self.collection_name)

@@ -5,6 +5,7 @@ from __future__ import annotations
 import subprocess
 import sys
 from pathlib import Path
+import json
 
 import pytest
 
@@ -12,7 +13,7 @@ import pytest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "4_AI_Response_Engine" / "code"))
 
-from grounding import is_grounded_answer, select_grounded_chunks
+from grounding import deterministic_pricing_answer, is_grounded_answer, select_grounded_chunks
 from response_engine import ZendsResponseEngine
 
 
@@ -272,6 +273,148 @@ def test_existing_product_pricing_generation_remains_grounded() -> None:
     ).respond("What is the price of ZENDCloud VM Basic in the USA?")
     assert result["recommended_response"] == draft
     assert result["abstention"] is False
+
+
+def test_exact_fiber_price_uses_source_tuple_when_model_echoes_prompt() -> None:
+    pricing = chunk(
+        "ZENDFiber Home 100 Mbps priced at $30 in the USA, $18 in India, $33 in Singapore, and $24 in Thailand "
+        "for individual users, and $25 in the USA, $15 in India, $27 in Singapore, and $20 in Thailand "
+        "for enterprise customers.",
+        chunk_id="zends-p02-c01", page=2,
+    )
+    llm = CaptureLLM("Never invent prices, policies, products, services, contracts, SLAs, refunds, discounts, privacy claims, or escalation procedures.")
+    engine = ZendsResponseEngine(StubNLP(intent="Product Inquiry"), StubRetriever([pricing]), llm)
+    result = engine.respond("What is the individual price of ZENDFiber Home 100 Mbps in India?")
+    assert result["recommended_response"] == "ZENDFiber Home 100 Mbps is priced at $18 in India for individual users."
+    assert result["abstention"] is False
+
+
+def test_pricing_rejects_wrong_country_or_customer_association() -> None:
+    pricing = chunk(
+        "ZENDFiber Home 100 Mbps priced at $30 in the USA, $18 in India for individual users, "
+        "and $25 in the USA, $15 in India for enterprise customers.",
+        chunk_id="zends-p02-c01", page=2,
+    )
+    query = "What is the individual price of ZENDFiber Home 100 Mbps in India?"
+    assert deterministic_pricing_answer(query, [pricing]) == "ZENDFiber Home 100 Mbps is priced at $18 in India for individual users."
+    assert deterministic_pricing_answer(query, [chunk(pricing["text"].replace("$18 in India", "$19 in India"))]) == "ZENDFiber Home 100 Mbps is priced at $19 in India for individual users."
+    assert deterministic_pricing_answer(query, [chunk("ZENDFiber Home 100 Mbps is priced at $15 in India for enterprise customers.")]) is None
+
+
+def test_adjacent_product_chunks_cannot_transfer_a_price_tuple() -> None:
+    first = chunk(
+        "ZENDFiber Home 100 Mbps priced at $18 in India for individual users, and",
+        chunk_id="zends-p02-c01", page=2,
+    )
+    second = chunk(
+        "ZENDOffice Net 200 is priced at $15 in India for enterprise customers.",
+        chunk_id="zends-p02-c02", page=2,
+    )
+    assert deterministic_pricing_answer(
+        "What is the enterprise price of ZENDFiber Home 100 Mbps in India?", [first, second]
+    ) is None
+    assert deterministic_pricing_answer(
+        "What is the enterprise price of ZENDFiber Home 100 Mbps in India?",
+        [chunk(f"{first['text']} {second['text']}", chunk_id="zends-p02-c01", page=2)],
+    ) is None
+    assert deterministic_pricing_answer(
+        "What is the enterprise price of ZENDOffice Net 200 in India?", [first, second]
+    ) == "ZENDOffice Net 200 is priced at $15 in India for enterprise users."
+
+
+def test_adjacent_chunks_can_complete_the_same_product_price_sentence() -> None:
+    first = chunk(
+        "ZENDFiber Home 100 Mbps priced at $18 in India for individual users, and",
+        chunk_id="zends-p02-c01", page=2,
+    )
+    continuation = chunk(
+        "$15 in India for enterprise customers.",
+        chunk_id="zends-p02-c02", page=2,
+    )
+    assert deterministic_pricing_answer(
+        "What is the enterprise price of ZENDFiber Home 100 Mbps in India?", [first, continuation]
+    ) == "ZENDFiber Home 100 Mbps is priced at $15 in India for enterprise users."
+
+
+def test_generated_answer_must_address_the_requested_information() -> None:
+    source = [chunk(
+        "ZENDS Communications provides mobile connectivity and cloud infrastructure. "
+        "Billing: Monthly billing in advance.",
+        chunk_id="zends-p01-c01", page=1,
+    )]
+    query = "What does ZENDS Communications provide?"
+    assert not is_grounded_answer("ZENDS Communications bills customers monthly in advance.", source, query=query)
+    assert is_grounded_answer("ZENDS Communications provides mobile connectivity and cloud infrastructure.", source, query=query)
+
+
+def test_all_pdf_product_country_customer_price_tuples() -> None:
+    sys.path.insert(0, str(ROOT / "3_RAG_Knowledge" / "code"))
+    from document_loader import load_pdf_pages
+    from text_processing import chunk_text
+
+    evidence = [
+        chunk(text, chunk_id=f"zends-p{page.page:02d}-c{index:02d}", page=page.page)
+        for page in load_pdf_pages(ROOT / "docs" / "ZENDS Communications.pdf")
+        for index, text in enumerate(chunk_text(page.text), start=1)
+    ]
+    facts = json.loads((ROOT / "1_Data_Foundation" / "config" / "zends_facts.json").read_text(encoding="utf-8"))
+    for product in facts["products"]:
+        for country, prices in product["prices"].items():
+            for customer_type, price in prices.items():
+                query = f"What is the {customer_type} price of {product['name']} in {country}?"
+                answer = deterministic_pricing_answer(query, evidence)
+                assert answer is not None, query
+                assert f"${price} " in answer, (query, answer)
+
+
+def test_persisted_chroma_product_records_cover_all_price_tuples() -> None:
+    sys.path.insert(0, str(ROOT / "3_RAG_Knowledge" / "code"))
+    from retriever import ZendsRetriever
+
+    retriever = ZendsRetriever(ROOT / "3_RAG_Knowledge" / "vector_db")
+    facts = json.loads((ROOT / "1_Data_Foundation" / "config" / "zends_facts.json").read_text(encoding="utf-8"))
+    for product in facts["products"]:
+        evidence = retriever.retrieve_exact_products([product["name"]])
+        for country, prices in product["prices"].items():
+            for customer_type, price in prices.items():
+                query = f"What is the {customer_type} price of {product['name']} in {country}?"
+                answer = deterministic_pricing_answer(query, evidence)
+                assert answer is not None and f"${price} " in answer, (query, answer)
+
+
+def test_persisted_group_capabilities_follow_the_correct_pdf_heading() -> None:
+    sys.path.insert(0, str(ROOT / "3_RAG_Knowledge" / "code"))
+    from retriever import ZendsRetriever
+
+    retriever = ZendsRetriever(ROOT / "3_RAG_Knowledge" / "vector_db")
+    expected = {
+        "Mobile Connectivity": "voice calling",
+        "Home & Office Internet": "fiber connectivity",
+        "Business Connectivity": "dedicated bandwidth",
+        "Cloud & Data Center Services": "virtual machines",
+        "IoT & Smart Solutions": "sensor connectivity",
+    }
+    for group, term in expected.items():
+        evidence = retriever.retrieve_group_capabilities(group)
+        assert len(evidence) == 1 and term in evidence[0]["text"]
+
+
+def test_two_product_difference_uses_each_product_price_tuple() -> None:
+    first = chunk("ZENDFiber Home 300 Mbps is priced at $30 in India for individual users, and $27 in India for enterprise customers.", chunk_id="zends-p02-c01", page=2)
+    second = chunk("ZENDOffice Net 1G is priced at $90 in India for individual users, and $78 in India for enterprise customers.", chunk_id="zends-p02-c02", page=2)
+    query = "What is the difference between ZENDFiber Home 300 Mbps and ZENDOffice Net 1G in India for an enterprise customer?"
+    result = ZendsResponseEngine(StubNLP(intent="Product Inquiry"), StubRetriever([first, second]), CaptureLLM("Never invent prices, policies, products, services, contracts, SLAs, refunds, discounts, privacy claims, or escalation procedures.")).respond(query)
+    assert "$27" in result["recommended_response"] and "$78" in result["recommended_response"]
+    assert "price difference is $51" in result["recommended_response"]
+    assert "$30" not in result["recommended_response"] and "$90" not in result["recommended_response"]
+
+
+def test_late_payment_routes_to_billing_source() -> None:
+    source = chunk("Billing: Monthly billing in advance. Late payment after 7 days may suspend services.", policy="Billing")
+    engine = ZendsResponseEngine(StubNLP(intent="Product Inquiry"), StubRetriever([source]), CaptureLLM())
+    result = engine.respond("What happens if an enterprise customer pays late?")
+    assert engine.retriever.policy_categories == ["Billing"]
+    assert "7 days" in result["recommended_response"]
 
 
 def test_grounding_rejects_unsupported_numeric_claim_in_generated_draft() -> None:

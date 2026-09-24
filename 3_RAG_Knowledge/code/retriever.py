@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import re
 
 from embeddings import SentenceTransformerEmbedder
 from vector_store import ZendsVectorStore
@@ -58,3 +59,61 @@ class ZendsRetriever:
             policy_ids = {str(chunk["metadata"].get("chunk_id")) for chunk in policy_chunks}
             chunks = policy_chunks + [chunk for chunk in chunks if str(chunk["metadata"].get("chunk_id")) not in policy_ids]
         return chunks
+
+    def retrieve_exact_products(self, product_names: list[str]) -> list[dict]:
+        """Fetch product records and their next page-local chunk for split price sentences."""
+        records = self.store.source_records()
+        by_id = {str(record["metadata"].get("chunk_id")): record for record in records}
+        found: list[dict] = []
+        seen: set[str] = set()
+        for name in product_names:
+            for record in records:
+                chunk_id = str(record["metadata"].get("chunk_id", ""))
+                if name.casefold() not in str(record["text"]).casefold():
+                    continue
+                for candidate in (record, by_id.get(chunk_id[:-2] + f"{int(chunk_id[-2:]) + 1:02d}") if chunk_id[-2:].isdigit() else None):
+                    if candidate is None:
+                        continue
+                    candidate_id = str(candidate["metadata"].get("chunk_id", ""))
+                    if candidate_id not in seen:
+                        found.append(candidate)
+                        seen.add(candidate_id)
+                break
+        return found
+
+    def source_records(self) -> list[dict]:
+        """Expose the persisted PDF records for source-derived query resolution."""
+        return self.store.source_records()
+
+    def retrieve_group_capabilities(self, group: str) -> list[dict]:
+        """Find the first service list following the PDF's explicit group heading."""
+        records = sorted(self.store.source_records(), key=lambda item: (int(item["metadata"]["page"]), str(item["metadata"]["chunk_id"])))
+        heading = re.compile(rf"\b[1-5]\.\s+{re.escape(group)}\b", re.I)
+        for index, record in enumerate(records):
+            match = heading.search(str(record["text"]))
+            if not match:
+                continue
+            for candidate in records[index:]:
+                text = str(candidate["text"])
+                services = text.find("Services include")
+                if services >= 0 and (candidate is not record or services > match.end()):
+                    return [candidate]
+        return []
+
+    def retrieve_group_products(self, group: str) -> list[dict]:
+        """Read records from a PDF group heading up to its service-list boundary."""
+        records = sorted(self.store.source_records(), key=lambda item: (int(item["metadata"]["page"]), str(item["metadata"]["chunk_id"])))
+        heading = re.compile(rf"\b[1-5]\.\s+{re.escape(group)}\b", re.I)
+        for index, record in enumerate(records):
+            match = heading.search(str(record["text"]))
+            if not match:
+                continue
+            selected = []
+            for candidate in records[index:]:
+                text = str(candidate["text"])
+                services = text.find("Services include")
+                if services >= 0 and (candidate is not record or services > match.end()):
+                    break
+                selected.append(candidate)
+            return selected
+        return []

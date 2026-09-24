@@ -40,6 +40,8 @@ def test_scope_guard_is_independent_of_response_generation() -> None:
     assert not is_unrelated_to_retrieved_knowledge("My office internet is down.", abstained)
     assert not is_unrelated_to_retrieved_knowledge("I want to complain about the service.", abstained)
     assert not is_unrelated_to_retrieved_knowledge("What cloud services are available?", abstained)
+    assert not is_unrelated_to_retrieved_knowledge("What is the price of Prepaid Basic in India?", abstained)
+    assert not is_unrelated_to_retrieved_knowledge("How much does Postpaid Gold cost in the USA?", abstained)
     assert OUT_OF_SCOPE_RESPONSE == "I'm here to help with ZENDS Communications services—how can I assist you today?"
     assert apply_scope_guard("Who is Virat Kohli?", abstained)["recommended_response"] == OUT_OF_SCOPE_RESPONSE
     guarded = apply_scope_guard("Write me a Python program.", incorrectly_answered)

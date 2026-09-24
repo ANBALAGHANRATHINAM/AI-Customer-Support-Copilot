@@ -24,11 +24,14 @@ OPERATIONAL_TERMS = {
     "problem", "problems", "slow", "stopped", "trouble", "unavailable", "working",
 }
 COMPLAINT_TERMS = {"complain", "complaint", "disappointed", "escalate", "escalation", "unhappy", "unresolved"}
-POLICY_TERMS = {"contract", "contracts", "discount", "discounts", "privacy", "refund", "sla"}
-PRODUCT_GROUP_TERMS = {"broadband", "cloud", "connectivity", "internet", "iot", "mobile", "network"}
+POLICY_TERMS = {
+    "cancel", "cancellation", "contract", "contracts", "discount", "discounts", "late", "limit",
+    "overdue", "privacy", "refund", "refundable", "sla", "uptime", "usage",
+}
+PRODUCT_GROUP_TERMS = {"broadband", "cloud", "connectivity", "home", "office", "internet", "iot", "mobile", "network"}
 PRODUCT_INQUIRY_TERMS = {
-    "available", "cost", "offer", "offering", "offerings", "offers", "option", "options", "plan", "plans",
-    "price", "pricing", "product", "products", "provide", "services", "solutions",
+    "available", "cost", "feature", "features", "include", "includes", "offer", "offering", "offerings", "offers",
+    "option", "options", "plan", "plans", "price", "pricing", "product", "products", "provide", "services", "solutions",
 }
 
 
@@ -65,6 +68,8 @@ def is_unrelated_to_retrieved_knowledge(query: str, result: dict[str, Any]) -> b
     if "zends" in raw_terms or any(term.startswith("zend") for term in raw_terms):
         return False
     if raw_terms & STRONG_ZENDS_SCOPE_TERMS or raw_terms & POLICY_TERMS:
+        return False
+    if raw_terms & {"prepaid", "postpaid"} and raw_terms & PRODUCT_INQUIRY_TERMS:
         return False
 
     service_context = bool(raw_terms & SERVICE_CONTEXT_TERMS)
